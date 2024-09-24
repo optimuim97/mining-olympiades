@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <main style="padding: 3rem 1rem;">
+        <div class="zonePage" {{ react_component('PageSponsoring', {titre: titre}) }}></div>
+    </main>
+{% endblock %}
+
+{% block title %}Sponsoring{% endblock %}
+
+{% block breadcrumb %}
+    <div class="zoneBreadcrumb">
+        <section id="breadcrumb">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ absolute_url(path('app_home')) }}"><i class="bi bi-house-fill"></i></a></li>
+                    <li class="breadcrumb-item"><a href="#">Participer</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Sponsoring</li>
+                </ol>
+            </nav>
+        </section>
+    </div>
+{% endblock %}
+

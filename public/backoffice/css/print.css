@@ -1,0 +1,12 @@
+.badge {
+  width: 360px;
+  height: 488px !important;
+  background-image: url("../img/licence.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: #000;
+  display: flex; }
+  .badge .info {
+    border: solid 1px #000; }
+
+/*# sourceMappingURL=print.css.map */

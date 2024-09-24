@@ -1,0 +1,90 @@
+{% extends 'backend_layout.html.twig' %}
+
+{% block title %}{{ parent() }} Gestion des participants{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="card bg-light-info shadow-none position-relative overflow-hidden">
+            <div class="card-body px-4 py-3">
+                <div class="row align-items-center">
+                    <div class="col-9">
+                        <h4 class="fw-semibold mb-8">Gestion des participants</h4>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a class="text-muted" href="#">Modules</a></li>
+                                <li class="breadcrumb-item"><a class="text-muted" href="#">Compétition</a></li>
+                                <li class="breadcrumb-item" aria-current="page">participants</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-3">
+                        <div class="text-center mb-n5">
+                            <span class="head-icon"><i class="ti-package"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col"><h5 class="mb-2 fw-semibold fs-4">Profile</h5></div>
+                                <div class="col text-end">
+                                    <a href="{{ path('app_backend_participant_index') }}" class="btn btn-outline-primary">Retour à la liste</a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="card-body">
+
+                            <div class="row justify-content-center align-content-center">
+                                <div class="col-md-8" style="border: solid 1px #ccc; font-size: 1.1rem; padding: 10px 20px;">
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <div class="row">
+                                                <div class="col-12"><strong>Entreprise :</strong> {{ participant['entreprise'] }}</div>
+                                                <div class="col-12 mt-3"><strong>Licence :</strong> <span style="font-weight: 900; color: darkgreen">{{ participant['licence'] }}</span> </div>
+                                                <div class="col-12 mt-3"><strong>Nom :</strong> {{ participant['nom'] }}</div>
+                                                <div class="col-12 mt-3"><strong>Prénoms :</strong> {{ participant['prenoms'] }}</div>
+                                                <div class="col-12 mt-3"><strong>Matricule :</strong> {{ participant['matricule'] }}</div>
+                                                <div class="col-12 mt-3"><strong>Email :</strong> {{ participant['email'] }}</div>
+                                                <div class="col-12 mt-3"><strong>Contact :</strong> {{ participant['contact'] }}</div>
+                                                <div class="col-12 mt-3"><strong>Discipline :</strong>{{ participant.discipline}} </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <img src="{{ absolute_url(asset('upload/participants/' ~ participant.media)) }}" alt="" class="img-fluid">
+                                                </div>
+                                                <div class="col-12 text-center mt-5" style="font-size: .9rem; font-weight: 700;">
+                                                    <a href="{{ absolute_url(asset('upload/participants/' ~ participant.carte)) }}" target="_blank">Justificatif</a>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row text-center mt-5">
+                                <div class="col-12">
+                                    <a href="{{ path('app_backend_participant_index') }}" class="btn btn-outline-primary">Retour à la liste</a>
+                                    <a href="#" class="btn btn-primary disabled">Imprimer</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+{% endblock %}

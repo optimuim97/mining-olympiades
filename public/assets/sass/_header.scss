@@ -1,0 +1,129 @@
+#topHead{
+    background-color: $couleur-orange;
+    color: $couleur-blanche;
+    z-index: 1;
+
+    a{
+        color: $couleur-blanche;
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+
+        &.lien{
+            margin-left: 10px;
+            margin-right: 50px;
+
+            &:hover{
+                color: rgba($color: $couleur-blanche, $alpha: 0.5);
+            }
+        }
+
+        &.bouton{
+            background: linear-gradient(180deg, rgba($couleur-verte, 0.6) 0%, rgba($couleur-verte, 1) 100%);
+            padding: 12px 50px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            overflow: hidden;
+
+            span{
+                width: 30px;
+                height: 30px;
+                background: rgba($couleur-verte, 0.7);
+                border-radius: 50%;
+                animation: fill 1s ease-in-out infinite alternate;
+            }
+
+            &:hover{
+                background: linear-gradient(90deg, rgba($couleur-verte, 1) 0%, rgba($couleur-verte, 0.6) 100%);
+                opacity: 0.8;
+            }
+        }
+
+        i{
+            margin-right: 5px;
+            font-weight: 900;
+        }
+
+        .bi-person-add{
+            animation: flash 2s ease-in-out infinite alternate;
+            font-size: 1.3rem;
+        }
+    }
+
+    .topHead{
+        padding: 10px 0;
+    }
+}
+
+#navbar{
+    .navbar{
+        padding: 20px 0;
+
+        .navbar-nav{
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+
+            a{
+                &.nav-link{
+                    color: $couleur-verte;
+                    font-weight: 500;
+                    font-size: 1.1rem;
+                }
+            }
+        }
+
+        .liens{
+            a{
+                text-decoration: none;
+                color: black;
+                font-size: 1.1rem;
+                font-weight: 500;
+
+                i{
+                    margin-right: 5px;
+                }
+            }
+
+            .participation{
+                background: linear-gradient(180deg, rgba($couleur-verte, 0.6) 0%, rgba($couleur-verte, 1) 100%);
+                padding: 10px ;
+
+                a{
+                    color: $couleur-blanche;
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+@keyframes fill {
+    100% {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+    }
+}
+
+@keyframes flash {
+    0% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+    

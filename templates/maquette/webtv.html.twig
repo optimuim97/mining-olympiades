@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Présentation</title>
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
+
+		<style>
+			footer {
+				position: relative !important;
+				background-color: #f68b2b !important;
+				padding: 40px 0 !important;
+				overflow: hidden !important; /* Pour éviter que les éléments inclinés ne débordent */
+				margin-top: 200px !important;
+			}
+
+			/* Barre verte inclinée derrière le footer */
+			.skew-bar {
+				position: absolute !important;
+				top: -20px !important; /* position légèrement au-dessus du footer */
+				left: 0 !important;
+				width: 100% !important;
+				height: 35px !important;
+				background-color: #0e9346 !important;
+				transform: skewY(359deg) !important;
+			}
+
+			footer h2 {
+				color: #ffffff !important;
+				font-size: 1.2rem !important;
+				margin-bottom: 10px !important;
+				display: inline !important;
+			}
+
+			footer h2 span {
+				color: #fff !important;
+				font-size: 2rem !important;
+				display: inline-block !important;
+			}
+
+			footer p,
+			footer a {
+				color: #ffffff !important;
+				font-size: 1rem !important;
+				margin: 0 !important;
+				text-decoration: none !important;
+			}
+
+			footer .social-icons a {
+				color: #ffffff !important;
+				font-size: 1.2rem !important;
+				margin-right: 15px !important;
+				transition: color 0.3s ease !important;
+				text-decoration: none !important;
+			}
+		</style>
+	</head>
+	<body class="content">
+		<div class="container-xl">
+			<header>
+				<div class="zoneHeadWebtv">
+					<section id="headWebtv">
+						<div class="row headWebtv">
+							<div class="col-9">
+								<h2>Cérémonie de lancement des Mining Olympiades 2024</h2>
+							</div>
+							<div class="col-3 text-center">
+								<a href="{{ path('app_maquette_accueil') }} " class="bouton">
+									<i class="bi bi-reply"></i>
+									Retour</a>
+							</div>
+						</div>
+					</section>
+				</div>
+			</header>
+			<main>
+				<div class="zoneWebtv">
+					<section id="webtv">
+						<div class="webtv" data-aos="zoom-in" data-aos-duration="1500">
+							<div class="video-container">
+								<iframe src="https://www.youtube-nocookie.com/embed/qP7xU4f-rRg?si=4k0c9NFRj1R10cnC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+							</div>
+						</div>
+					</section>
+
+					<section id="replay">
+						<div class="replay" data-aos="fade-up" data-aos-duration="1500">
+							<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-2">
+								<div class="col video-picture">
+									<a href="#">
+										<img src="/assets/images/orange.png" alt="" class="img-fluid video-affiche">
+									</a>
+									<span class="play-icon"></span>
+								</div>
+								<div class="col video-picture">
+									<a href="">
+										<img src="/assets/images/vert.png" alt="" class="img-fluid video-affiche">
+										<span class="play-icon"></span>
+									</a>
+								</div>
+								<div class="col video-picture">
+									<a href="#">
+										<img src="/assets/images/orange.png" alt="" class="img-fluid video-affiche">
+										<span class="play-icon"></span>
+									</a>
+								</div>
+								<div class="col video-picture">
+									<a href="">
+										<img src="/assets/images/vert.png" alt="" class="img-fluid video-affiche">
+										<span class="play-icon"></span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</main>
+			<footer>
+				<!-- Barre verte inclinée -->
+				<div class="skew-bar"></div>
+
+				<div class="zoneContact">
+					<section id="">
+						<div class="container">
+							<div class="row justify-content-center">
+								<div class="col-md-6 text-center text-white">
+									<h2>Besoin d'aide
+										<span>?</span>
+									</h2>
+									<p style="margin-bottom: 5px;">
+										<a href="mailto:olympiades@chambredesmines.org">
+											olympiades@chambredesmines.org
+										</a>
+									</p>
+									<p style="margin-bottom: 5px;">
+										(+225) 27 22 403 966 / 07 87 755 337
+									</p>
+									<div class="social-icons mt-3">
+										<a href="#" class="me-3">
+											<i class="bi bi-facebook"></i>
+										</a>
+										<a href="#" class="me-3">
+											<i class="bi bi-twitter"></i>
+										</a>
+										<a href="#" class="me-3">
+											<i class="bi bi-instagram"></i>
+										</a>
+										<a href="#" class="me-3">
+											<i class="bi bi-youtube"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</footer>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<script>
+			AOS.init();
+		</script>
+	</body>
+</html>

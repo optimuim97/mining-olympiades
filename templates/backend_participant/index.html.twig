@@ -1,0 +1,113 @@
+{% extends 'backend_layout.html.twig' %}
+
+{% block title %}{{ parent() }} Gestion des participants{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="card bg-light-info shadow-none position-relative overflow-hidden">
+            <div class="card-body px-4 py-3">
+                <div class="row align-items-center">
+                    <div class="col-9">
+                        <h4 class="fw-semibold mb-8">Gestion des participants</h4>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a class="text-muted" href="#">Modules</a></li>
+                                <li class="breadcrumb-item"><a class="text-muted" href="#">Compétition</a></li>
+                                <li class="breadcrumb-item" aria-current="page">participants</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-3">
+                        <div class="text-center mb-n5">
+                            <span class="head-icon"><i class="ti-package"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col"><h5 class="mb-2 fw-semibold fs-4">Liste</h5></div>
+
+                            </div>
+
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="listes" class="table  border table-striped table-bordered display text-nowrap" style="width: 100%;">
+                                    <thead>
+                                    <tr>
+                                        <th class="text-center text-uppercase">#</th>
+                                        <th class="text-center text-uppercase">SOCIETE</th>
+                                        <th class="text-center text-uppercase">NOM & PRENOMS</th>
+                                        <th class="text-center text-uppercase">MATRICULE</th>
+                                        <th class="text-center text-uppercase">CONTACT</th>
+                                        <th class="text-center text-uppercase">EMAIL</th>
+                                        <th class="text-center text-uppercase">LICENCE</th>
+                                        <th class="text-center text-uppercase">DISCIPLINE</th>
+                                        <th class="text-center text-uppercase">ACTIONS</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for participant in participants %}
+                                        <tr>
+                                            <td>{{ loop.index }}</td>
+                                            <td>{{ participant.abonnement.compagnie.titre }}</td>
+                                            <td>{{ participant.nom }} {{ participant.prenoms }}</td>
+                                            <td>{{ participant.matricule }}</td>
+                                            <td>{{ participant.contact }}</td>
+                                            <td>{{ participant.email }}</td>
+                                            <td>{{ participant.licence }}</td>
+                                            <td>
+                                                {% for competir in participant.discipline %}
+                                                    {{ competir.titre }}
+                                                {% endfor %}
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="{{ path('app_backend_participant_show', {'id': participant.id}) }}"><i class="ti-user"></i></a> &nbsp; | &nbsp;
+                                                <a href="{{ path('app_backend_participant_edit', {'id': participant.id}) }}"><i class="ti-pencil-alt"></i></a>
+                                            </td>
+                                        </tr>
+                                    {% else %}
+                                        <tr>
+                                            <td class="text-center" colspan="7">Aucun participant trouvé</td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ absolute_url(asset('backoffice/vendor/css/prism.min.css')) }}">
+    <link rel="stylesheet" href="{{ absolute_url(asset('backoffice/vendor/DataTables/datatables.min.css')) }}">
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ absolute_url(asset('backoffice/vendor/js/prism.js')) }}"></script>
+    <script src="{{ absolute_url(asset('backoffice/vendor/DataTables/datatables.min.js')) }}"></script>
+    <script>
+        $('#listes').DataTable( {
+            dom: 'Bfrtip',
+            scrollX: true,
+            buttons: [
+                'copy', 'excel', 'pdf'
+            ]
+        } );
+    </script>
+{% endblock %}

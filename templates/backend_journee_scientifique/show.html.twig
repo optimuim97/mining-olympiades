@@ -1,0 +1,77 @@
+{% extends 'backend_layout.html.twig' %}
+
+{% block title %}{{ parent() }} Gestion des etudiants{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="card bg-light-info shadow-none position-relative overflow-hidden">
+            <div class="card-body px-4 py-3">
+                <div class="row align-items-center">
+                    <div class="col-9">
+                        <h4 class="fw-semibold mb-8">Gestion des etudiants</h4>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a class="text-muted" href="#">Modules</a></li>
+                                <li class="breadcrumb-item"><a class="text-muted" href="#">Journée scientifique</a></li>
+                                <li class="breadcrumb-item" aria-current="page">Etudiants</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-3">
+                        <div class="text-center mb-n5">
+                            <span class="head-icon"><i class="ti-package"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col"><h5 class="mb-2 fw-semibold fs-4">Profile</h5></div>
+                                <div class="col text-end">
+                                    <a href="{{ path('app_backend_journee_scientifique_index') }}" class="btn btn-outline-primary">Retour à la liste</a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="card-body">
+
+                            <div class="row justify-content-center align-content-center">
+                                <div class="col-md-8" style="border: solid 1px #ccc; font-size: 1.1rem; padding: 10px 20px;">
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <div class="row">
+                                                <div class="col-12 mt-3"><strong>Code :</strong> <span style="font-weight: 900; color: darkgreen">{{ etudiant.reference}}</span> </div>
+                                                <div class="col-12 mt-3"><strong>Nom :</strong> {{ etudiant.nom }}</div>
+                                                <div class="col-12 mt-3"><strong>Prénoms :</strong> {{ etudiant.prenoms }}</div>
+                                                <div class="col-12 mt-3"><strong>Email :</strong> {{ etudiant.email }}</div>
+                                                <div class="col-12 mt-3"><strong>Contact :</strong> {{ etudiant.contact }}</div>
+                                                <div class="col-12 mt-3"><strong>Filière :</strong> {{ etudiant.filiere }}</div>
+                                                <div class="col-12 mt-3"><strong>Niveau :</strong>{{ etudiant.niveau}} </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row text-center mt-5">
+                                <div class="col-12">
+                                    <a href="{{ path('app_backend_journee_scientifique_index') }}" class="btn btn-outline-primary">Retour à la liste</a>
+                                    <a href="#" class="btn btn-primary disabled">Imprimer</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+{% endblock %}

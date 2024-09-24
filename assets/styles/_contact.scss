@@ -1,0 +1,40 @@
+#contact{
+    margin-top: 200px;
+    .contact{
+        background: rgba($color: $couleur-orange, $alpha: 0.2);
+        padding: 100px 10px 50px;
+
+        a{
+            text-decoration: none;
+            color: $couleur-verte;
+            font-weight: 700;
+
+            &:hover{
+                color: $couleur-orange;
+            }
+
+            i{
+                font-weight: 900;
+                font-size: 1.3rem;
+            }
+        }
+    }
+}
+
+#copyright{
+    .copyright{
+        background: #834702;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: rgba($color: $couleur-light-purple, $alpha: 0.6);
+
+        a{
+            text-decoration: none;
+            color: rgba($color: $couleur-light-purple, $alpha: 0.6);
+
+            &:hover{
+                color: $couleur-light-purple;
+            }
+        }
+    }
+}

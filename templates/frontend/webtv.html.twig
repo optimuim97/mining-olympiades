@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ absolute_url(asset('assets/images/Olympiade-logo.png')) }}">
+    <title>WebTV</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+
+    <style>
+        footer {
+				position: relative !important;
+				background-color: #f68b2b !important;
+				padding: 40px 0 !important;
+				overflow: hidden !important; /* Pour éviter que les éléments inclinés ne débordent */
+				margin-top: 200px !important;
+			}
+
+			/* Barre verte inclinée derrière le footer */
+			.skew-bar {
+				position: absolute !important;
+				top: -20px !important; /* position légèrement au-dessus du footer */
+				left: 0 !important;
+				width: 100% !important;
+				height: 35px !important;
+				background-color: #0e9346 !important;
+				transform: skewY(359deg) !important;
+			}
+
+			footer h2 {
+				color: #ffffff !important;
+				font-size: 1.2rem !important;
+				margin-bottom: 10px !important;
+				display: inline !important;
+			}
+
+			footer h2 span {
+				color: #fff !important;
+				font-size: 2rem !important;
+				display: inline-block !important;
+			}
+
+			footer p,
+			footer a {
+				color: #ffffff !important;
+				font-size: 1rem !important;
+				margin: 0 !important;
+				text-decoration: none !important;
+			}
+
+			footer .social-icons a {
+				color: #ffffff !important;
+				font-size: 1.2rem !important;
+				margin-right: 15px !important;
+				transition: color 0.3s ease !important;
+				text-decoration: none !important;
+			}
+        </style>
+</head>
+<body class="content">
+<div class="container-xl">
+    <div {{ react_component('PageWebTV', {'slug': slug}) }}></div>
+    <footer>
+				<!-- Barre verte inclinée -->
+				<div class="skew-bar"></div>
+
+				<div class="zoneContact">
+					<section id="">
+						<div class="container">
+							<div class="row justify-content-center">
+								<div class="col-md-6 text-center text-white">
+									<h2>Besoin d'aide
+										<span>?</span>
+									</h2>
+									<p style="margin-bottom: 5px;">
+										<a href="mailto:olympiades@chambredesmines.org">
+											olympiades@chambredesmines.org
+										</a>
+									</p>
+									<p style="margin-bottom: 5px;">
+										(+225) 27 22 403 966 / 07 87 755 337
+									</p>
+									<div class="social-icons mt-3">
+										<a href="#" class="me-3">
+											<i class="bi bi-facebook"></i>
+										</a>
+										<a href="#" class="me-3">
+											<i class="bi bi-twitter"></i>
+										</a>
+										<a href="#" class="me-3">
+											<i class="bi bi-instagram"></i>
+										</a>
+										<a href="#" class="me-3">
+											<i class="bi bi-youtube"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</footer>
+</div>
+
+{% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+</body>
+</html>

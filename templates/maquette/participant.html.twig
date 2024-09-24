@@ -1,0 +1,117 @@
+{% extends 'maquette_layout.html.twig' %}
+
+{% block body %}
+    <main>
+        <div class="zoneInscription">
+            <section id="inscription">
+                <div class="inscription">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col-xl-4"  data-aos="fade-right" data-aos-duration="1500">
+                            <div class="instruction-bloc" data-black-overlay="4">
+                                <div class="instruction-image">
+                                    <img src="/assets/images/avatar.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-8">
+                            <div class="formulaire-bloc"  data-aos="fade-up" data-aos-duration="1500">
+                                <form action="#" method="post">
+                                    <div class="row row-cols-1 row-cols-lg-2 g-4 no-gutters">
+
+                                        <div class="col">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control licence" id="floatingInput" placeholder="email" value="23-10254-A" readonly>
+                                                <label for="floatingInput">Licence</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="compagnie" value="MINE SARL" readonly>
+                                                <label for="floatingInput">Compagnie  </label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="discipline" value="MARACANA ZONE" readonly>
+                                                <label for="floatingInput">Discipline  </label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="nom" value="AMOIKON" readonly>
+                                                <label for="floatingInput">Nom  </label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="prenoms" value="DIEUDONNE" readonly>
+                                                <label for="floatingInput">Prenoms </label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="Matricule" value="1254-5A" readonly>
+                                                <label for="floatingInput">Matricule </label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="contact" value="0709321521" readonly>
+                                                <label for="floatingInput">Contact </label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="email" value="dieudonne@dreammaker-ci" readonly>
+                                                <label for="floatingInput">Email</label>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 mt-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked disabled>
+                                                <label class="form-check-label" for="flexCheckChecked">
+                                                    Je confirme avoir pris connaissance des <a href="#" target="_blank">règlements des jeux</a> et l'accepte.
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-5 d-flex justify-content-center align-content-center align-items-center">
+                                        <div class="col-6 d-grid gap-2">
+                                            <a href="inscription.html" class="btn btn-success btn-lg btn-lien"><i class="bi bi-pencil-square"></i> Modifier</a>
+                                        </div>
+                                        <div class="col-6 d-grid gap-2">
+                                            <a href="#" class="btn btn-outline-success btn-lg"><i class="bi bi-printer"></i> Imprimer</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+{% endblock %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block breadcrumb %}
+    <div class="zoneBreadcrumb">
+        <section id="breadcrumb">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#"><i class="bi bi-house-fill"></i></a></li>
+                    <li class="breadcrumb-item"><a href="#">Presentation</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Mining Olympiades 2024</li>
+                </ol>
+            </nav>
+        </section>
+    </div>
+{% endblock %}
+

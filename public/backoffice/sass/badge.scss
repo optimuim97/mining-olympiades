@@ -1,0 +1,46 @@
+$couleur-verte: #039404;
+
+.badge{
+  background-image: url("../img/licence.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 525px;
+  height: 740px;
+  color: #000;
+
+  .info{
+    margin-top: 150px;
+  }
+
+  .licence{
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: $couleur-verte;
+  }
+
+  .photo{
+    margin: 0 auto;
+
+    img{
+      width: 150px;
+      max-height: 180px;
+      min-height: 180px;
+      border-radius: 10px;
+      border-top: solid 5px darkorange ;
+      border-bottom: solid 5px darkorange ;
+      border-left: solid 1px darkorange;
+      border-right: solid 1px darkorange;
+    }
+  }
+
+  .label{
+    font-size: .8rem;
+    font-weight: 700;
+  }
+  .donnees{
+    font-weight: bold;
+    color: $couleur-verte;
+    margin-top: 5px;
+  }
+}

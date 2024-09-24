@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>
+			{% block title %}GPMCI
+			{% endblock %}
+		</title>
+		<link rel="icon" href="{{ absolute_url(asset('assets/images/Olympiade-logo.png')) }}">
+
+		<meta name="keywords" content="Mining, olympiades">
+		<meta name="description" content="La 8ème édition des Mining Olympiades aura lieu les 15 et 16 décembre sur le thème : « Valorisons nos régions » et verra la participation de filiales de sociétés minières installées en Afrique de l’ouest."/>
+		<link rel="canonical" href="https://miningolympiades.org"/>
+		<link rel="next" href=" https://miningolympiades.org/"/>
+
+		<meta property="og:locale" content="fr_FR"/>
+		<meta property="og:locale:alternate" content="en_US"/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:title" content="La 8ème édition des Mining Olympiades"/>
+		<meta property="og:description" content="La 8ème édition des Mining Olympiades aura lieu les 15 et 16 décembre sur le thème : « Valorisons nos régions » et verra la participation de filiales de sociétés minières installées en Afrique de l’ouest."/>
+		<meta property="og:url" content="https://miningolympiades.org/"/>
+		<meta property="og:site_name" content="Mining Olympiades"/>
+		<meta property="article:modified_time" content="2024-09-28T04:08:30+00:00"/>
+		<meta property="og:image" content="{{ absolute_url(asset('assets/images/Olympiade-logo.png')) }}"/>
+		<meta property="og:image:type" content="image/svg+xml"/>
+		<meta name="twitter:card" content="summary_large_image"/>
+		<meta name="twitter:description" content="La 8ème édition des Mining Olympiades aura lieu les 15 et 16 décembre sur le thème : « Valorisons nos régions » et verra la participation de filiales de sociétés minières installées en Afrique de l’ouest."/>
+		<meta name="twitter:title" content="La 8ème édition des Mining Olympiades"/>
+		<meta name="twitter:domain" content="Mining Olympiades"/>
+		<meta name="twitter:image:src" content="{{ absolute_url(asset('assets/images/Olympiade-logo.png')) }}"/>
+
+		<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+		<link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+		<link rel="dns-prefetch" href="//unpkg.com">
+		<link rel="dns-prefetch" href="//fonts.googleapis.com">
+		<link
+		rel="dns-prefetch" href="//youtube.com">
+
+		<!-- CSS intégré -->
+		<style>
+			body {
+				background: linear-gradient(to bottom, #ffffff 0%, #fff5e6 100%);
+				min-height: 100vh; /* Assure que le dégradé couvre toute la hauteur de la vue */
+			}
+
+			footer {
+				position: relative !important;
+				background-color: #f68b2b !important;
+				padding: 40px 0 !important;
+				overflow: hidden !important; /* Pour éviter que les éléments inclinés ne débordent */
+				margin-top: 200px !important;
+			}
+
+			/* Barre verte inclinée derrière le footer */
+			.skew-bar {
+				position: absolute !important;
+				top: -20px !important; /* position légèrement au-dessus du footer */
+				left: 0 !important;
+				width: 100% !important;
+				height: 35px !important;
+				background-color: #0e9346 !important;
+				transform: skewY(359deg) !important;
+			}
+
+			footer h2 {
+				color: #ffffff !important;
+				font-size: 1.2rem !important;
+				margin-bottom: 10px !important;
+				display: inline !important;
+			}
+
+			footer h2 span {
+				color: #fff !important;
+				font-size: 2rem !important;
+				display: inline-block !important;
+			}
+
+			footer p,
+			footer a {
+				color: #ffffff !important;
+				font-size: 1rem !important;
+				margin: 0 !important;
+				text-decoration: none !important;
+			}
+
+			footer .social-icons a {
+				color: #ffffff !important;
+				font-size: 1.2rem !important;
+				margin-right: 15px !important;
+				transition: color 0.3s ease !important;
+				text-decoration: none !important;
+			}
+
+			#menu-fixed-top {
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				z-index: 1000;
+				transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+			}
+
+			#menu-fixed-top.hidden {
+				transform: translateY(-100%);
+				opacity: 0;
+			}
+
+			#menu-fixed-top.visible {
+				transform: translateY(0);
+				opacity: 1;
+			}
+		</style>
+
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}
+	</head>
+
+	<body class="content">
+		<div class="container-fluid" style="padding: 0">
+			<header
+				style="position: relative; width: 100%; background-color: #fff; z-index: 3;">
+				<!-- Logo centré -->
+				<div style="text-align: center; padding: 10px 0;" id="logo">
+					<a href="{{ absolute_url(path('app_home')) }}">
+						<img src="{{ absolute_url(asset('assets/images/Olympiade-logo.png')) }}" alt="Logo" style="max-width: 200px; @media (min-width: 768px) {max-width: 50vw }">
+					</a>
+				</div>
+
+				<div class="zoneNavbar">
+					<section
+						id="navbar">
+						<!-- Barre de navigation avec menu hamburger -->
+						<nav class="navbar navbar-expand-lg d-none d-lg-block" style="position: absolute; bottom: -60px; padding: 0 50px; z-index: 5">
+							<div
+								class="container-fluid d-flex align-items-center justify-content-between">
+								<!-- Menu desktop -->
+								<div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+									<ul class="navbar-nav">
+										<li class="nav-item">
+											<a class="nav-link active" href="{{ absolute_url(path('app_home')) }}" style="color: #f69322; padding: 8px 15px; border-radius: 20px; background-color: #ffffff; margin-right: 20px; font-size: 0.8rem;">
+												Accueil
+											</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link active" href="{{ absolute_url(path('app_frontend_programme_index')) }}" style="color: #f69322; padding: 8px 15px; border-radius: 20px; background-color: #ffffff; margin-right: 20px; font-size: 0.8rem;">
+												Programme
+											</a>
+										</li>
+										<li class="nav-item dropdown">
+											<a class="nav-link dropdown-toggle" href="#" style="font-size: 0.8rem; padding: 8px 15px; border-radius: 20px; background-color: #ffffff; margin-right: 20px;">
+												<span style="color: #f69322">Participer</span>
+											</a>
+											<ul class="dropdown-menu">
+												<li>
+													<a class="dropdown-item" href="{{ absolute_url(path('app_frontend_journee_scientifique_index')) }}">S'inscrire à la journée scientifique</a>
+												</li>
+												<li>
+													<a class="dropdown-item membreParticipation" href="#">S'inscrire à la journée sportive</a>
+												</li>
+												<li>
+													<a class="dropdown-item" href="{{ absolute_url(path('app_frontend_telecharger')) }}">Télécharger la plaquette</a>
+												</li>
+												<li>
+													<a class="dropdown-item" href="{{ absolute_url(path('app_frontend_sponsoring_index')) }}">Devenir sponsor</a>
+												</li>
+											</ul>
+										</li>
+										<li class="nav-item dropdown">
+											<a class="nav-link dropdown-toggle" href="{{ absolute_url(path('app_frontend_contact_index')) }}" style="font-size: 0.8rem; padding: 8px 15px; border-radius: 20px; background-color: #ffffff; margin-right: 20px;">
+												<span style="color: #f69322">Médiathèques</span>
+											</a>
+											<ul class="dropdown-menu">
+												<li>
+													<a class="dropdown-item" href="{{ absolute_url(path('app_frontend_photo_index')) }}">Photos</a>
+												</li>
+												{#                                            <li><a class="dropdown-item" href="#">Presse</a></li>#}
+												{#                                            <li><a class="dropdown-item" href="#">Documents</a></li>#}
+											</ul>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="{{ absolute_url(path('app_frontendwebtv_show',{slug: 'live'})) }}" style="color: #f69322; font-size: 0.8rem; padding: 8px 15px; border-radius: 20px; background-color: #ffffff; margin-right: 20px;">WebTV</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" href="{{ absolute_url(path('app_frontend_contact_index')) }}" style="color: #f69322; font-size: 0.8rem; padding: 8px 15px; border-radius: 20px; background-color: #ffffff;">Contact</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</nav>
+
+						<nav class="navbar navbar-expand-lg d-block d-lg-none d-flex align-items-center justify-content-between" style="position: absolute; bottom: -80px; width: 100%; z-index: 5">
+							<div
+								class="container-fluid d-flex align-items-center justify-content-between collapse navbar-collapse">
+								<!-- Menu hamburger affiché par défaut -->
+								<button
+									class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" style="background-color: #fff; border: none; border-radius: 50%; padding: 6px;">
+									<!-- class="navbar-toggler-icon"  -->
+									<span style="background-color: #fff; display: inline-block; width: 24px; height: 24px;">
+										<svg fill="#0b8e36" viewbox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" width="24" height="24">
+											<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+											<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+											<g id="SVGRepo_iconCarrier">
+												<g transform="matrix(1,0,0,1,-1024,-192)">
+													<rect id="Icons" x="0" y="0" width="1280" height="800" style="fill:none;"></rect>
+													<g id="Icons1" serif:id="Icons">
+														<g id="Strike"></g>
+														<g id="H1"></g>
+														<g id="H2"></g>
+														<g id="H3"></g>
+														<g id="list-ul"></g>
+														<g id="hamburger-1" transform="matrix(1.50868,0,0,1.01217,6.67804,191.698)">
+															<g transform="matrix(0.149202,0,0,0.173437,664.206,42.142)">
+																<rect x="103.288" y="8.535" width="212.447" height="34.133" style="fill-rule:nonzero;"></rect>
+															</g>
+															<g transform="matrix(0.149202,0,0,0.173437,664.345,27.4)">
+																<rect x="103.288" y="8.535" width="212.447" height="34.133" style="fill-rule:nonzero;"></rect>
+															</g>
+															<g transform="matrix(0.149202,0,0,0.173437,664.345,12.658)">
+																<rect x="103.288" y="8.535" width="212.447" height="34.133" style="fill-rule:nonzero;"></rect>
+															</g>
+														</g>
+														<g id="hamburger-2"></g>
+														<g id="list-ol"></g>
+														<g id="list-task"></g>
+														<g id="trash"></g>
+														<g id="vertical-menu"></g>
+														<g id="horizontal-menu"></g>
+														<g id="sidebar-2"></g>
+														<g id="Pen"></g>
+														<g id="Pen1" serif:id="Pen"></g>
+														<g id="clock"></g>
+														<g id="external-link"></g>
+														<g id="hr"></g>
+														<g id="info"></g>
+														<g id="warning"></g>
+														<g id="plus-circle"></g>
+														<g id="minus-circle"></g>
+														<g id="vue"></g>
+														<g id="cog"></g>
+														<g id="logo"></g>
+														<g id="radio-check"></g>
+														<g id="eye-slash"></g>
+														<g id="eye"></g>
+														<g id="toggle-off"></g>
+														<g id="shredder"></g>
+														<g id="spinner--loading--dots-" serif:id="spinner [loading, dots]"></g>
+														<g id="react"></g>
+														<g id="check-selected"></g>
+														<g id="turn-off"></g>
+														<g id="code-block"></g>
+														<g id="user"></g>
+														<g id="coffee-bean"></g>
+														<g transform="matrix(0.638317,0.368532,-0.368532,0.638317,785.021,-208.975)">
+															<g id="coffee-beans">
+																<g id="coffee-bean1" serif:id="coffee-bean"></g>
+															</g>
+														</g>
+														<g id="coffee-bean-filled"></g>
+														<g transform="matrix(0.638317,0.368532,-0.368532,0.638317,913.062,-208.975)">
+															<g id="coffee-beans-filled">
+																<g id="coffee-bean2" serif:id="coffee-bean"></g>
+															</g>
+														</g>
+														<g id="clipboard"></g>
+														<g transform="matrix(1,0,0,1,128.011,1.35415)">
+															<g id="clipboard-paste"></g>
+														</g>
+														<g id="clipboard-copy"></g>
+														<g id="Layer1"></g>
+													</g>
+												</g>
+											</g>
+										</svg>
+									</span>
+								</button>
+
+								<li class="nav-item dropdown nav-link d-block">
+									<a class="nav-link dropdown-toggle" id="btn_participer_inutile" href="#" style="color: #fff;padding: 4px 15px;border-radius: 20px;background-color: #0b8e36;font-size: 14px;">
+										<span style="color: #f69322">Participer</span>
+									</a>
+									<ul class="dropdown-menu" id="second_menu" style="right: .5rem !important;">
+										<li>
+											<a class="dropdown-item" href="{{ absolute_url(path('app_frontend_journee_scientifique_index')) }}">S'inscrire à la journée scientifique</a>
+										</li>
+										<li>
+											<a class="dropdown-item membreParticipation" href="#">S'inscrire à la journée sportive</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="{{ absolute_url(path('app_frontend_telecharger')) }}">Télécharger la plaquette</a>
+										</li>
+										<li>
+											<a class="dropdown-item" href="{{ absolute_url(path('app_frontend_sponsoring_index')) }}">Devenir sponsor</a>
+										</li>
+									</ul>
+								</li>
+
+								{# <a class="nav-link d-block" href="#" >
+									Participer
+								</a> #}
+
+								<!-- Menu mobile-->
+								<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+									<div class="offcanvas-header">
+										<a class="navbar-brand" href="{{ absolute_url(path('app_home')) }}">
+											<img src="{{ absolute_url(asset('assets/images/Olympiade-logo.png')) }}" alt="" width="75">
+										</a>
+										<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+									</div>
+									<div class="offcanvas-body">
+										<ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+											<li class="nav-item">
+												<a class="nav-link active" aria-current="page" href="{{ absolute_url(path('app_home')) }}">Accueil</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="{{ absolute_url(path('app_frontend_programme_index')) }}">Programme</a>
+											</li>
+											<li class="nav-item dropdown">
+												<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+													Participer
+												</a>
+												<ul class="dropdown-menu">
+													<li>
+														<a class="dropdown-item" href="{{ absolute_url(path('app_frontend_journee_scientifique_index')) }}">S'inscrire à la journée scientifique</a>
+													</li>
+													<li>
+														<a class="dropdown-item membreParticipation" href="#">S'inscrire à la journée sportive</a>
+													</li>
+													<li>
+														<a class="dropdown-item" href="{{ absolute_url(path('app_frontend_telecharger')) }}">Télécharger la plaquette</a>
+													</li>
+													<li>
+														<a class="dropdown-item" href="{{ absolute_url(path('app_frontend_sponsoring_index')) }}">Devenir sponsor</a>
+													</li>
+												</ul>
+											</li>
+											<li class="nav-item dropdown">
+												<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+													Médiathèque
+												</a>
+												<ul class="dropdown-menu">
+													<li>
+														<a class="dropdown-item" href="{{ absolute_url(path('app_frontend_photo_index')) }}">Photos</a>
+													</li>
+													{#                                                <li><a class="dropdown-item" href="#">Presse</a></li>#}
+													{#                                                <li><a class="dropdown-item" href="#">Documents</a></li>#}
+												</ul>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="{{ absolute_url(path('app_frontendwebtv_show',{slug: 'live'})) }}">WebTV</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" href="{{ absolute_url(path('app_frontend_contact_index')) }}">Contact</a>
+											</li>
+										</ul>
+
+										<div class="row liens">
+											<div class="col-12 mb-3 mt-5">
+												<a href="tel:+2252722403966">
+													<i class="bi bi-telephone"></i>
+													(225) 27 22 403 966</a>
+											</div>
+											<div class="col-12 mb-3">
+												<a href="mailto:olympiades@chambredesmines.org">
+													<i class="bi bi-envelope"></i>
+													olympiades@chambredesmines.org</a>
+											</div>
+											<div class="col-12 participation">
+												<a href="#" class="bouton boutonParticiper">
+													<span></span>
+													<i class="bi bi-person-add"></i>
+													Participer</a>
+											</div>
+
+											{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+												<a href="{{ absolute_url(path('app_logout')) }}" class="deconnexion mt-3">
+													<i class="bi bi-unlock"></i>
+													<span>Déconnexion</span>
+												</a>
+											{% endif %}
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+							<div
+								class="container-fluid hidden align-items-center justify-content-between" style="background-color: #fff; position: fixed; top: 0; padding-right: 20px; padding-left: 20px" id="menu-fixed-top">
+								<!-- Menu hamburger affiché par défaut -->
+								<a href="{{ absolute_url(path('app_home')) }}">
+									<img src="{{ absolute_url(asset('assets/images/Olympiade-logo.png')) }}" alt="Logo" style="max-width: 150px; padding: 10px 0">
+								</a>
+
+								<button
+									class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation" style="background-color: #fff; border: none; border-radius: 50%; padding: 6px;">
+									<!-- class="navbar-toggler-icon"  -->
+									<span style="background-color: #f6932250; display:flex; align-items:center; justify-content: center; width: 30px; height: 30px; border-radius: 100%">
+										<svg fill="#0b8e36" width="20px" height="20px" viewbox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;" width="24" height="24">
+											<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+											<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+											<g id="SVGRepo_iconCarrier">
+												<g transform="matrix(1,0,0,1,-1024,-192)">
+													<rect id="Icons" x="0" y="0" width="1280" height="800" style="fill:none;"></rect>
+													<g id="Icons1" serif:id="Icons">
+														<g id="Strike"></g>
+														<g id="H1"></g>
+														<g id="H2"></g>
+														<g id="H3"></g>
+														<g id="list-ul"></g>
+														<g id="hamburger-1" transform="matrix(1.50868,0,0,1.01217,6.67804,191.698)">
+															<g transform="matrix(0.149202,0,0,0.173437,664.206,42.142)">
+																<rect x="103.288" y="8.535" width="212.447" height="34.133" style="fill-rule:nonzero;"></rect>
+															</g>
+															<g transform="matrix(0.149202,0,0,0.173437,664.345,27.4)">
+																<rect x="103.288" y="8.535" width="212.447" height="34.133" style="fill-rule:nonzero;"></rect>
+															</g>
+															<g transform="matrix(0.149202,0,0,0.173437,664.345,12.658)">
+																<rect x="103.288" y="8.535" width="212.447" height="34.133" style="fill-rule:nonzero;"></rect>
+															</g>
+														</g>
+														<g id="hamburger-2"></g>
+														<g id="list-ol"></g>
+														<g id="list-task"></g>
+														<g id="trash"></g>
+														<g id="vertical-menu"></g>
+														<g id="horizontal-menu"></g>
+														<g id="sidebar-2"></g>
+														<g id="Pen"></g>
+														<g id="Pen1" serif:id="Pen"></g>
+														<g id="clock"></g>
+														<g id="external-link"></g>
+														<g id="hr"></g>
+														<g id="info"></g>
+														<g id="warning"></g>
+														<g id="plus-circle"></g>
+														<g id="minus-circle"></g>
+														<g id="vue"></g>
+														<g id="cog"></g>
+														<g id="logo"></g>
+														<g id="radio-check"></g>
+														<g id="eye-slash"></g>
+														<g id="eye"></g>
+														<g id="toggle-off"></g>
+														<g id="shredder"></g>
+														<g id="spinner--loading--dots-" serif:id="spinner [loading, dots]"></g>
+														<g id="react"></g>
+														<g id="check-selected"></g>
+														<g id="turn-off"></g>
+														<g id="code-block"></g>
+														<g id="user"></g>
+														<g id="coffee-bean"></g>
+														<g transform="matrix(0.638317,0.368532,-0.368532,0.638317,785.021,-208.975)">
+															<g id="coffee-beans">
+																<g id="coffee-bean1" serif:id="coffee-bean"></g>
+															</g>
+														</g>
+														<g id="coffee-bean-filled"></g>
+														<g transform="matrix(0.638317,0.368532,-0.368532,0.638317,913.062,-208.975)">
+															<g id="coffee-beans-filled">
+																<g id="coffee-bean2" serif:id="coffee-bean"></g>
+															</g>
+														</g>
+														<g id="clipboard"></g>
+														<g transform="matrix(1,0,0,1,128.011,1.35415)">
+															<g id="clipboard-paste"></g>
+														</g>
+														<g id="clipboard-copy"></g>
+														<g id="Layer1"></g>
+													</g>
+												</g>
+											</g>
+										</svg>
+									</span>
+								</button>
+
+							</div>
+						</nav>
+					</section>
+				</div>
+			</header>
+
+			{% block body %}{% endblock %}
+
+			<footer>
+				<!-- Barre verte inclinée -->
+				<div class="skew-bar"></div>
+
+				<div class="zoneContact">
+					<section id="">
+						<div class="container">
+							<div class="row justify-content-center">
+								<div class="col-md-6 text-center text-white">
+									<h2>Besoin d'aide
+										<span>?</span>
+									</h2>
+									<p style="margin-bottom: 5px;">
+										<a href="mailto:olympiades@chambredesmines.org">
+											olympiades@chambredesmines.org
+										</a>
+									</p>
+									<p style="margin-bottom: 5px;">
+										(+225) 27 22 403 966 / 07 87 755 337
+									</p>
+									<div class="social-icons mt-3">
+										<a href="#" class="me-3">
+											<i class="bi bi-facebook"></i>
+										</a>
+										<a href="#" class="me-3">
+											<i class="bi bi-twitter"></i>
+										</a>
+										<a href="#" class="me-3">
+											<i class="bi bi-instagram"></i>
+										</a>
+										<a href="#" class="me-3">
+											<i class="bi bi-youtube"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</footer>
+
+		</div>
+
+		{% block javascripts %}
+			<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+			<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.31/dist/sweetalert2.all.min.js"></script>
+			<script src="{{ absolute_url(asset('assets/js/btnParticiper.js')) }}"></script>
+			<script src="{{ absolute_url(asset('assets/js/btnParticiper2.js')) }}"></script>
+			<script>
+				AOS.init();
+			</script>
+			<script>
+				window.addEventListener("scroll", function () {
+				const navbar = document.querySelector('#menu-fixed-top');
+				if (window.scrollY > 50) {
+				navbar.classList.remove('hidden');
+				navbar.classList.add('visible');
+				} else {
+				navbar.classList.remove('visible');
+				navbar.classList.add('hidden');
+				}
+				});
+
+				const btn_participer_inutile = document.getElementById(
+				"btn_participer_inutile"
+				);
+				const second_menu = document.getElementById("second_menu");
+
+				btn_participer_inutile.addEventListener("click", () => {
+				console.log("Bouton clické");
+
+				if(second_menu.style.display === 'block') {
+					second_menu.style.display = 'none';
+				} else {
+					second_menu.style.display = 'block'
+				}
+				});
+
+
+			</script>
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
+	</body>
+</html>

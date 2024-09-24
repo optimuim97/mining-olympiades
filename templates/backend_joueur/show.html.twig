@@ -1,0 +1,128 @@
+{% extends 'backend_layout.html.twig' %}
+
+{% block title %}{{ parent() }} Gestion des participants{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="card bg-light-info shadow-none position-relative overflow-hidden">
+            <div class="card-body px-4 py-3">
+                <div class="row align-items-center">
+                    <div class="col-9">
+                        <h4 class="fw-semibold mb-8">Gestion des participants</h4>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a class="text-muted" href="#">Modules</a></li>
+                                <li class="breadcrumb-item"><a class="text-muted" href="#">Compétition</a></li>
+                                <li class="breadcrumb-item" aria-current="page">participants</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-3">
+                        <div class="text-center mb-n5">
+                            <span class="head-icon"><i class="ti-package"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col"><h5 class="mb-2 fw-semibold fs-4">Profile</h5></div>
+                                <div class="col text-end">
+                                    <a href="{{ path('app_backend_joueur_index') }}" class="btn btn-outline-primary">Retour à la liste</a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="card-body">
+
+                            <div class="row justify-content-center align-content-center">
+                                <div class="col-md-8 badge" style="border: solid 1px #ccc; font-size: 1.1rem; padding: 10px 20px;" id="participant-badge">
+                                    <div class="row info">
+                                        <div class="col-md-12">
+                                            <div class="row">
+                                                <div class="col-12 mb-3 licence"> {{ participant['licence'] }} </div>
+                                                <div class="col-12 photo d-flex justify-content-center align-content-center align-items-center">
+                                                    <img src="{{ absolute_url(asset('upload/participants/' ~ participant.media)) }}" alt="" class="img-fluid">
+                                                </div>
+                                                <div class="col-12 mt-3">
+                                                    <div class="label">Entreprise</div>
+                                                    <div class="donnees">{{ participant['entreprise'] }}</div>
+                                                </div>
+                                                <div class="col-12 mt-2">
+                                                    <div class="label">Nom</div>
+                                                    <div class="donnees">{{ participant['nom'] }}</div>
+                                                </div>
+                                                <div class="col-12 mt-2">
+                                                    <div class="label">Prénoms</div>
+                                                    <div class="donnees">{{ participant['prenoms'] }}</div>
+                                                </div>
+                                                <div class="col-12 mt-2">
+                                                    <div class="label">Matricule</div>
+                                                    <div class="donnees">{{ participant['matricule'] }}</div>
+                                                </div>
+                                                <div class="col-12 mt-2">
+                                                    <div class="label">Contact</div>
+                                                    <div class="donnees">{{ participant['contact'] }}</div>
+                                                </div>
+                                                <div class="col-12 mt-2">
+                                                    <div class="label">Discipline</div>
+                                                    <div class="donnees">{{ participant.discipline}} </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+                            </div>
+                            </div>
+                            <div class="row text-center mt-5">
+                                <div class="col-12">
+                                    <a href="{{ path('app_backend_joueur_index') }}" class="btn btn-outline-primary">Retour à la liste</a>
+                                    <button class="btn btn-primary" id="btnImprimer">Imprimer</button>
+                                </div>
+                                <div class="col-12 text-start mt-5">
+                                    {{ include('backend_joueur/_delete_form.html.twig') }}
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+
+    </div>
+
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ absolute_url(asset('backoffice/css/badge.css')) }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("btnImprimer").addEventListener("click", function() {
+                imprimerBadge();
+            });
+
+            function imprimerBadge() {
+                var badge = document.getElementById('participant-badge');
+                var fenetreImpression = window.open('', '_blank');
+                console.log('click')
+                fenetreImpression.document.write('<html><head><title>Badge</title></head><body>');
+                fenetreImpression.document.write('<img src="' + badge.toDataURL() + '" style="width:100%;">');
+                fenetreImpression.document.write('</body></html>');
+                fenetreImpression.document.close();
+                fenetreImpression.print();
+            }
+        });
+    </script>
+{% endblock %}

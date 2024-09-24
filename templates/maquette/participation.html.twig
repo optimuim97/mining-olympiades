@@ -1,0 +1,127 @@
+{% extends 'maquette_layout.html.twig' %}
+
+{% block body %}
+    <main>
+        <div class="zoneInscription">
+            <section id="inscription">
+                <div class="inscription">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col-xl-4"  data-aos="fade-right" data-aos-duration="1500">
+                            <div class="instruction-bloc" data-black-overlay="4">
+                                <div class="instruction-contenu">
+                                    <h3>Je <span>compétie</span></h3>
+                                    <p>
+                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis, assumenda temporibus, nam eius natus eveniet esse, quia deleniti commodi vero nemo iusto adipisci mollitia nesciunt tenetur qui corrupti ex aut!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-8">
+                            <div class="formulaire-bloc"  data-aos="fade-up" data-aos-duration="1500">
+                                <form action="{{ path('app_maquette_page', {'slug': 'participant'}) }}" method="post">
+                                    <div class="row row-cols-1 row-cols-lg-2 g-4 no-gutters">
+                                        <div class="col">
+                                            <div class="form-floating">
+                                                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                                    <option selected>-- Choisissez votre compagnie --</option>
+                                                    <option value="1"></option>
+                                                    <option value="1">Compagnie 1</option>
+                                                    <option value="2">Compagnie 2</option>
+                                                    <option value="3">Compagnie 3</option>
+                                                </select>
+                                                <label for="floatingSelect">Compagnie <span>*</span></label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating">
+                                                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                                                    <option selected>-- Choisissez la discipline de compétition --</option>
+                                                    <option value="1"></option>
+                                                    <option value="1">Maracana zone</option>
+                                                    <option value="2">Awalé</option>
+                                                    <option value="3">Ludo</option>
+                                                </select>
+                                                <label for="floatingSelect">Discipline <span>*</span></label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="nom">
+                                                <label for="floatingInput">Nom <span>*</span> </label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="prenoms">
+                                                <label for="floatingInput">Prenoms <span>*</span></label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="prenoms">
+                                                <label for="floatingInput">Matricule <span>*</span></label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="prenoms">
+                                                <label for="floatingInput">Contact <span>*</span></label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="prenoms">
+                                                <label for="floatingInput">Email</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col">
+                                            <div class="mb-3">
+                                                <input class="form-control form-control-lg" type="file" data-preview=".preview" placeholder="Photo">
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 mt-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                                <label class="form-check-label" for="flexCheckChecked">
+                                                    En m'inscrivant je confirme avoir pris connaissance des <a href="#" target="_blank">règlements des jeux</a> et l'accepte.
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-5 d-flex justify-content-center align-content-center align-items-center">
+                                        <div class="col-12 col-md-6 d-grid gap-2">
+                                            <button type="submit" class="btn btn-success btn-lg bouton"><i class="bi bi-floppy"></i> Enregistrer</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+{% endblock %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block breadcrumb %}
+    <div class="zoneBreadcrumb">
+        <section id="breadcrumb">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#"><i class="bi bi-house-fill"></i></a></li>
+                    <li class="breadcrumb-item"><a href="#">Presentation</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Mining Olympiades 2024</li>
+                </ol>
+            </nav>
+        </section>
+    </div>
+{% endblock %}
+

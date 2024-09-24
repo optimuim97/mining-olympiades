@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<main>
+    <div class="zoneFormulaireNonMembre" {{ react_component('AdhesionNonMembre') }}></div>
+</main>
+{% endblock %}
+
+{% block title %}Formulaire d'inscription des non membres{% endblock %}
+
+{% block breadcrumb %}
+    <div class="zoneBreadcrumb">
+        <section id="breadcrumb">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ absolute_url(path('app_home')) }}"><i class="bi bi-house-fill"></i></a></li>
+                    <li class="breadcrumb-item"><a href="#">Participation</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Non membre</li>
+                </ol>
+            </nav>
+        </section>
+    </div>
+{% endblock %}

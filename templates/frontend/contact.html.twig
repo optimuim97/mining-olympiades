@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <main>
+        <div class="zonePage">
+            <section id="page">
+                <div class="page">
+                    <div class="row no-gutters align-items-center">
+
+                        <div class="col-xl-8">
+                            <div class="contact-form"  data-aos="fade-up" data-aos-duration="1500">
+                                <form action="#" method="post">
+                                    <div class="row row-cols-1 row-cols-lg-2 g-4 no-gutters">
+
+                                        <div class="col">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="nom">
+                                                <label for="floatingInput">Nom & prénoms</label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="prenoms">
+                                                <label for="floatingInput">Contact </label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="prenoms">
+                                                <label for="floatingInput">Email </label>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="form-floating">
+                                                <input type="text" class="form-control" id="floatingInput" placeholder="prenoms">
+                                                <label for="floatingInput">Objet </label>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 mt-3">
+                                            <div class="form-floating">
+                                                <textarea class="form-control" placeholder="laissez votre message" id="floatingTextarea2" style="height: 100px"></textarea>
+                                                <label for="floatingTextarea2">Message</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-5 d-flex justify-content-center align-content-center align-items-center">
+                                        <div class="col-12 col-md-6 d-grid gap-2">
+                                            <button type="submit" class="btn btn-success btn-lg bouton"><i class="bi bi-send"></i> Envoyer</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-xl-4"  data-aos="fade-right" data-aos-duration="1500">
+                            <div class="contact-info" data-black-overlay="4">
+                                <h3>Contact</h3>
+                                <div class="contenu">
+                                    <h4>Adresse</h4>
+                                    <p>
+                                        Abidjan, Cocody Riviera 3 Bonoumin cité Zinsou Villa Mining House, 08 BP 2194 ABJ 08
+                                    </p>
+                                </div>
+                                <div class="contenu">
+                                    <h4>Télephone</h4>
+                                    <p><a href="#">Tél: (225) 27 22 403 966/ 07 87 755 337</a> </p>
+                                </div>
+                                <div class="contenu">
+                                    <h4>Email</h4>
+                                    <p><a href="mailto:info@miningolympiades.org">info@miningolympiades.org</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+{% endblock %}
+
+{% block title %}Contact{% endblock %}
+
+{% block breadcrumb %}
+    <div class="zoneBreadcrumb">
+        <section id="breadcrumb">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ absolute_url(path('app_home')) }}"><i class="bi bi-house-fill"></i></a></li>
+{#                    <li class="breadcrumb-item"><a href="#">Presentation</a></li>#}
+                    <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                </ol>
+            </nav>
+        </section>
+    </div>
+{% endblock %}
+

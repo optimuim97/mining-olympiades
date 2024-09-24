@@ -1,0 +1,128 @@
+{% extends 'backend_layout.html.twig' %}
+
+{% block title %}{{ parent() }} Gestion des adhesions{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="card bg-light-info shadow-none position-relative overflow-hidden">
+            <div class="card-body px-4 py-3">
+                <div class="row align-items-center">
+                    <div class="col-9">
+                        <h4 class="fw-semibold mb-8">Gestion des adhesions</h4>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a class="text-muted" href="#">Modules</a></li>
+                                <li class="breadcrumb-item"><a class="text-muted" href="#">Produits</a></li>
+                                <li class="breadcrumb-item" aria-current="page">adhesions</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-3">
+                        <div class="text-center mb-n5">
+                            <span class="head-icon"><i class="ti-package"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col"><h5 class="mb-2 fw-semibold fs-4">Détails</h5></div>
+
+                            </div>
+
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-9">
+                                    <div class="table-responsive">
+                                        <table class="table table-responsive table-bordered">
+                                            <tbody>
+                                            <tr>
+                                                <th>Représentant</th>
+                                                <td>{{ adhesion.civilite }} {{ adhesion.nom }} {{ adhesion.prenoms }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Fonction</th>
+                                                <td>{{ adhesion.fonction }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Entreprise</th>
+                                                <td>{{ adhesion.entreprise }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Email</th>
+                                                <td>{{ adhesion.email }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Telephone</th>
+                                                <td>{{ adhesion.telephone }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Adresse</th>
+                                                <td>{{ adhesion.adresse }}</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Statut</th>
+                                                <td>{{ adhesion.statut ? '<span class="badge bg-success">VALIDE</span>' : '<span class="badge bg-danger">NON VALIDE</span>' }}</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-3">
+                                    {% if adhesion.media %}
+                                        <img src="{{ absolute_url(asset('upload/adhesion/' ~ adhesion.media)) }}" alt="" class="img-fluid">
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            <div class="row mt-5">
+                                <div class="col text-start">
+                                    {{ include('backend_adhesion/_delete_form.html.twig') }}
+                                </div>
+                                <div class="col text-end">
+                                    <a href="{{ path('app_backend_adhesion_index') }}" class="btn btn-outline-secondary btn-lg">Annuler</a>
+                                </div>
+                                <div class="col text-left">
+                                    <form action="{{ path('app_backend_adhesion_edit', {'id': adhesion.id}) }}" method="post">
+                                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('validation' ~ adhesion.id) }}">
+                                        <button type="submit" class="btn btn-primary btn-lg {{ adhesion.statut ? 'disabled' : '' }}">Valider</button>
+                                    </form>
+{#                                    <a href="{{ path('app_backend_adhesion_edit', {'id': adhesion.id}) }}" class="btn btn-primary btn-lg">Valider</a>#}
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ absolute_url(asset('backoffice/vendor/css/prism.min.css')) }}">
+    <link rel="stylesheet" href="{{ absolute_url(asset('backoffice/vendor/DataTables/datatables.min.css')) }}">
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ absolute_url(asset('backoffice/vendor/js/prism.js')) }}"></script>
+    <script src="{{ absolute_url(asset('backoffice/vendor/DataTables/datatables.min.js')) }}"></script>
+    <script>
+        $('#listes').DataTable( {
+            dom: 'Bfrtip',
+            scrollX: true,
+            buttons: [
+                'copy', 'excel', 'pdf'
+            ]
+        } );
+    </script>
+{% endblock %}

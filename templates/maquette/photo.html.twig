@@ -1,0 +1,51 @@
+{% extends 'maquette_layout.html.twig' %}
+
+{% block body %}
+    <main>
+        <div class="zoneMedia">
+            <section id="media">
+                <div class="container">
+                    <div class="galerie">
+                        <img src="/assets/images/photos/01.jpg" alt="" class="photo">
+                        <img src="/assets/images/photos/02.jpg" alt="" class="photo">
+                        <img src="/assets/images/photos/03.jpg" alt="" class="photo">
+                        <img src="/assets/images/photos/04.jpg" alt="" class="photo">
+                        <img src="/assets/images/photos/05.jpg" alt="" class="photo">
+                        <img src="/assets/images/photos/06.jpg" alt="" class="photo">
+                    </div>
+                    <div class="modal" id="modal">
+                        <div class="modal-nav">
+                            <button id="prevBtn">&lt;</button>
+                            <img src="" alt="Image Zoom">
+                            <button id="nextBtn">&gt;</button>
+                        </div>
+                        <buton id="closeBtn">&times;</buton>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
+{% endblock %}
+
+{% block title %}Photos{% endblock %}
+
+{% block breadcrumb %}
+    <div class="zoneBreadcrumb">
+        <section id="breadcrumb">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#"><i class="bi bi-house-fill"></i></a></li>
+                    <li class="breadcrumb-item"><a href="#">Presentation</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Mining Olympiades 2024</li>
+                </ol>
+            </nav>
+        </section>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="/assets/js/galerie.js"></script>
+{% endblock %}
+

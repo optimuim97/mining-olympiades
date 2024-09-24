@@ -1,0 +1,51 @@
+#presentation{
+    margin-top: 100px;
+
+    h3{
+        font-weight: 400;
+        font-style: italic;
+        font-size: 1.3rem;
+
+        span{
+            color: $couleur-orange;
+        }
+    }
+
+    h1{
+        font-weight: 700;
+        color: $couleur-verte;
+        margin-bottom: 30px;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+
+        &:hover{
+            color: $couleur-orange;
+        }
+    }
+
+    a{
+        text-decoration: none;
+        color: $couleur-orange;
+        font-weight: 400;
+        font-size: 1.2rem;
+        font-style: italic;
+
+        &:hover{
+            color: $couleur-verte;
+
+            &::after{
+                padding-left: 30px;
+            }
+        }
+
+        &::after{
+            content:'»'; 
+            margin-left: 5px;
+            font-size: 1.1rem;
+        }
+    }
+
+    .illustration{
+        margin-top: 50px;
+    }
+}

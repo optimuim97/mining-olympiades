@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="stylesheet" href="">
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        <style>
+        footer {
+				position: relative !important;
+				background-color: #f68b2b !important;
+				padding: 40px 0 !important;
+				overflow: hidden !important; /* Pour éviter que les éléments inclinés ne débordent */
+				margin-top: 200px !important;
+			}
+
+			/* Barre verte inclinée derrière le footer */
+			.skew-bar {
+				position: absolute !important;
+				top: -20px !important; /* position légèrement au-dessus du footer */
+				left: 0 !important;
+				width: 100% !important;
+				height: 35px !important;
+				background-color: #0e9346 !important;
+				transform: skewY(359deg) !important;
+			}
+
+			footer h2 {
+				color: #ffffff !important;
+				font-size: 1.2rem !important;
+				margin-bottom: 10px !important;
+				display: inline !important;
+			}
+
+			footer h2 span {
+				color: #fff !important;
+				font-size: 2rem !important;
+				display: inline-block !important;
+			}
+
+			footer p,
+			footer a {
+				color: #ffffff !important;
+				font-size: 1rem !important;
+				margin: 0 !important;
+				text-decoration: none !important;
+			}
+
+			footer .social-icons a {
+				color: #ffffff !important;
+				font-size: 1.2rem !important;
+				margin-right: 15px !important;
+				transition: color 0.3s ease !important;
+				text-decoration: none !important;
+			}
+        </style>
+
+    </head>
+    <body class="content">
+        <div class="container-fluid">
+            <header>
+                <div class="zoneTopHead">
+                    <section id="topHead">
+                        <div class="row topHead">
+                            <div class="col-8">
+                                <a href="tel:+2252722403966" class="lien"><i class="bi bi-telephone"></i> (225) 27 22 403 966</a>
+                                <a href="mailto:olympiades@chambredesmines.org" class="lien"><i class="bi bi-envelope"></i> olympiades@chambredesmines.org</a>
+                            </div>
+                            <div class="col-4 text-center">
+                                <a href="{{ path('app_maquette_page', {'slug': 'participation'}) }}" class="bouton"><span></span><i class="bi bi-person-add"></i> Participer</a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="zoneNavbar">
+                    <section id="navbar">
+                        <nav class="navbar navbar-expand-lg bg-body-ligth sticky-top">
+                            <div class="container-fluid">
+                                <a class="navbar-brand" href="{{ absolute_url(path('app_maquette_accueil')) }}">
+                                    <img src="{{ absolute_url(asset('assets/images/Olympiade-logo.png')) }}" alt="" width="100">
+                                </a>
+                                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <!-- Menu desktop -->
+                                <div class="collapse navbar-collapse d-flex justify-content-evenly d-none d-lg-block" id="navbarNavDropdown">
+                                    <ul class="navbar-nav ">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="{{ absolute_url(path('app_maquette_accueil')) }}">Accueil</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ absolute_url(path('app_maquette_page',{slug: 'presentation'})) }}">Présentation</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ path('app_maquette_page', {'slug': 'programme'}) }}">Programme</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="actualite.html">Actualités</a>
+                                        </li>
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Médiathèque 23
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="{{ path('app_maquette_page', {'slug': 'photos'}) }}">Photos</a></li>
+                                                <li><a class="dropdown-item" href="#">Presse</a></li>
+                                                <li><a class="dropdown-item" href="#">Documents</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ path('app_maquette_page', {'slug': 'webtv'}) }}">WebTV</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="{{ path('app_maquette_page', {'slug': 'contact'}) }}">Contact</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Menu mobile-->
+                                <div class="offcanvas offcanvas-start d-block d-lg-none" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                                    <div class="offcanvas-header">
+                                        <a class="navbar-brand" href="{{ absolute_url(path('app_maquette_accueil')) }}">
+                                            <img src="{{ absolute_url(asset('assets/images/Olympiade-logo.png')) }}" alt="" width="75">
+                                        </a>
+                                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                    </div>
+                                    <div class="offcanvas-body">
+                                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" aria-current="page" href="{{ absolute_url(path('app_maquette_accueil')) }}">Accueil</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{{ path('app_maquette_page', {'slug': 'presentation'}) }}">Présentation</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{{ path('app_maquette_page', {'slug': 'programme'}) }}">Programme</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="actualites.html">Actualités</a>
+                                            </li>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    Médiathèque 23
+                                                </a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a class="dropdown-item" href="{{ path('app_maquette_page', {'slug': 'photos'}) }}">Photos</a></li>
+                                                    <li><a class="dropdown-item" href="#">Vidéo</a></li>
+                                                    <li><a class="dropdown-item" href="#">Presse</a></li>
+                                                    <li><a class="dropdown-item" href="#">Documents</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{{ path('app_maquette_page', {'slug': 'webtv'}) }}">WebTV</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{{ path('app_maquette_page', {'slug': 'contact'}) }}">Contact</a>
+                                            </li>
+                                        </ul>
+
+                                        <div class="row liens">
+                                            <div class="col-12 mb-3 mt-5">
+                                                <a href="tel:+2252722403966"><i class="bi bi-telephone"></i> (225) 27 22 403 966</a>
+                                            </div>
+                                            <div class="col-12 mb-3">
+                                                <a href="mailto:olympiades@chambredesmines.org"><i class="bi bi-envelope"></i> olympiades@chambredesmines.org</a>
+                                            </div>
+                                            <div class="col-12 participation">
+                                                <a href="{{ path('app_maquette_page', {'slug': 'participation'}) }}" class="bouton"><i class="bi bi-pencil-square"></i> Participer</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </nav>
+                    </section>
+                </div>
+                {% block breadcrumb %}{% endblock %}
+            </header>
+            {% block body %}{% endblock %}
+            <footer>
+				<!-- Barre verte inclinée -->
+				<div class="skew-bar"></div>
+
+				<div class="zoneContact">
+					<section id="">
+						<div class="container">
+							<div class="row justify-content-center">
+								<div class="col-md-6 text-center text-white">
+									<h2>Besoin d'aide
+										<span>?</span>
+									</h2>
+									<p style="margin-bottom: 5px;">
+										<a href="mailto:olympiades@chambredesmines.org">
+											olympiades@chambredesmines.org
+										</a>
+									</p>
+									<p style="margin-bottom: 5px;">
+										(+225) 27 22 403 966 / 07 87 755 337
+									</p>
+									<div class="social-icons mt-3">
+										<a href="#" class="me-3">
+											<i class="bi bi-facebook"></i>
+										</a>
+										<a href="#" class="me-3">
+											<i class="bi bi-twitter"></i>
+										</a>
+										<a href="#" class="me-3">
+											<i class="bi bi-instagram"></i>
+										</a>
+										<a href="#" class="me-3">
+											<i class="bi bi-youtube"></i>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+			</footer>
+        </div>
+
+
+        {% block javascripts %}
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                AOS.init();
+            </script>
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </body>
+</html>

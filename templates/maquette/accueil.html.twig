@@ -1,0 +1,152 @@
+{% extends 'maquette_layout.html.twig' %}
+{% block title %}Maquette{% endblock %}
+{% block body %}
+    <main>
+        <div class="zoneCarousel">
+            <section id="carousel">
+                <div class="container carousel-container">
+                    <div class="carousel"  data-aos="fade-right" data-aos-duration="1500">
+                        <div class="carousel-elt">
+                            <h1>Mining Olympiades 2024</h1>
+                            <h2>Thème: <span>Valorisons nos régions</span></h2>
+                            <h3>Les 15 et 16 décembre 2023 à Yamoussoukro</h3>
+                            <a href="{{ path('app_maquette_page', {'slug': 'participation'}) }}" class="bouton">Participer</a>
+                        </div>
+                        <div class="carousel-elt">
+                            <h1>Mining Olympiades 2024</h1>
+                            <h2>C'est une <span>Journée scientifique</span></h2>
+                            <h3>sous le thème: <span class="theme">Le teme</span></h3>
+                            <a href="{{ path('app_maquette_page', {'slug': 'participation'}) }}" class="bouton">Participer</a>
+                        </div>
+                        <div class="carousel-elt">
+                            <h1>Mining Olympiades 2024</h1>
+                            <h2>Ce sont des <span>compétitions sportives</span> </h2>
+                            <h3>dans plus de 20 displines </h3>
+                            <a href="{{ path('app_maquette_page', {'slug': 'participation'}) }}" class="bouton">Participer</a>
+                        </div>
+                        <div class="carousel-elt">
+                            <h1>Mining Olympiades 2024</h1>
+                            <h2>C'est une <span>soirée gala</span></h2>
+                            <h3>Avec des artistes de renoms</h3>
+                            <a href="{{ path('app_maquette_page', {'slug': 'participation'}) }}" class="bouton">Participer</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="zonePresentation">
+            <section id="presentation">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8 col-xl-7 text-center"  data-aos="fade-up" data-aos-duration="2500" data-aos-delay="100">
+                        <h3 class="rubrique"><span>--</span> Présentation <span>--</span></h3>
+                        <h1 class="titre">Les Mining Olympiades</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime nostrum blanditiis fugit dolores. Exercitationem distinctio perferendis beatae? Officiis distinctio iusto voluptas enim nobis cumque corporis consequatur. Fuga ab amet placeat!
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, molestias dicta officia voluptatem dolorum laboriosam dolorem aperiam modi, necessitatibus, odit facere quibusdam ad incidunt est maiores? Perspiciatis, natus! Esse, deserunt?
+                        </p>
+                        <a href="#" class="lirePlus">Lire plus</a>
+                    </div>
+                </div>
+                <div class="illustration justify-content-center" data-aos="zoom-in" data-aos-duration="3000" data-aos-delay="100">
+                    <img src="/assets/images/illustration2.png" alt="" class="img-fluid">
+                </div>
+            </section>
+        </div>
+        <div class="zoneActivite">
+            <section id="activite">
+                <div class="card-group activite">
+                    <div class="card vert"  data-aos="fade-left" data-aos-duration="3000" data-aos-delay="100">
+                        <div class="card-body">
+                            <div class="text-center">
+                                <img src="/assets/images/icon/icon-scientific-o.png" alt="" class="icon">
+                            </div>
+                            <h5 class="card-title">
+                                <a href="#">Journée scientifique</a>
+                            </h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        </div>
+                    </div>
+                    <div class="card gris" data-aos="fade-up" data-aos-duration="3000" data-aos-delay="100">
+                        <div class="card-body">
+                            <div class="text-center">
+                                <img src="/assets/images/icon/icon-sport.png" alt="" class="icon">
+                            </div>
+                            <h5 class="card-title">
+                                <a href="#">Journée sportive</a>
+                            </h5>
+                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                        </div>
+                    </div>
+                    <div class="card vert" data-aos="fade-right" data-aos-duration="3000" data-aos-delay="200">
+                        <div class="card-body">
+                            <div class="text-center">
+                                <img src="/assets/images/icon/icon-gala.png" alt="" class="icon">
+                            </div>
+                            <h5 class="card-title">
+                                <a href="#">Soirée gala</a>
+                            </h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="zonedisciplines">
+            <section id="discipline">
+                <div class="disciplines">
+                    <div  data-aos="fade-down" data-aos-duration="3000" data-aos-delay="100">
+                        <h3 class="rubrique"><span>--</span> Compétitions <span>--</span></h3>
+                        <h1 class="titre">Les disciplines </h1>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia repudiandae facere eligendi et voluptatum eos veritatis. Asperiores, eaque voluptatibus! Quam quos quas harum consectetur blanditiis quis saepe tempora soluta rerum.
+                        </p>
+                    </div>
+
+
+                    <div class="row mt-5">
+                        <div class="col-12 col-lg-4"  data-aos="flip-left" data-aos-duration="3000" data-aos-delay="100">
+                            <div class="row gap-2">
+                                <div class="col-8 ligne">Maracana zone</div>
+                                <div class="col-3 ligne">Golf</div>
+                                <div class="col-5 ligne">Babyfoot</div>
+                                <div class="col-6 ligne">4x4 relai</div>
+                                <div class="col-6 ligne">Pétanque</div>
+                                <div class="col-5 ligne">Basketball</div>
+                                <div class="col-4 ligne">Scrabble</div>
+                                <div class="col-7 ligne">Tennis de table</div>
+                                <div class="col-7 ligne">Jeu vidéo (Football ~ Ps4)</div>
+                                <div class="col-4 ligne">Natation</div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-4 mt-5 mt-lg-0"  data-aos="zoom-out" data-aos-duration="3000" data-aos-delay="100">
+                            <img src="/assets/images/sport.png" alt="" class="img-fluid">
+                        </div>
+                        <div class="col-12 col-lg-4 mt-5 mt-lg-0" data-aos="flip-right" data-aos-duration="3000" data-aos-delay="100">
+                            <div class="row gap-2">
+                                <div class="col-8 ligne">Football</div>
+                                <div class="col-3 ligne">Dames</div>
+                                <div class="col-5 ligne">1500 m</div>
+                                <div class="col-6 ligne">Awalé</div>
+                                <div class="col-6 ligne">Cyclisme</div>
+                                <div class="col-5 ligne">Volleyball</div>
+                                <div class="col-4 ligne">Ludo</div>
+                                <div class="col-7 ligne">Petits poteaux</div>
+                                <div class="col-7 ligne">Course en sac</div>
+                                <div class="col-4 ligne">Marathon</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+    </main>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="/assets/js/carousel.js"></script>
+{% endblock %}

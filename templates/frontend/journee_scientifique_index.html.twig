@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<main style="padding: 5rem 1rem;">
+		<div class="zonePage" {{ react_component('PageScientifique') }}></div>
+	</main>
+{% endblock %}
+
+{% block title %}Participation à la journée scientifique
+{% endblock %}
+
+{% block breadcrumb %}
+	<div class="zoneBreadcrumb">
+		<section id="breadcrumb">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item">
+						<a href="{{ absolute_url(path('app_home')) }}">
+							<i class="bi bi-house-fill"></i>
+						</a>
+					</li>
+					<li class="breadcrumb-item">
+						<a href="#">Participer</a>
+					</li>
+					<li class="breadcrumb-item active" aria-current="page">Journée scientifique</li>
+				</ol>
+			</nav>
+		</section>
+	</div>
+{% endblock %}

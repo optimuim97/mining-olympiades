@@ -1,0 +1,41 @@
+#discipline{
+    margin-top: 100px;
+    transition: all 0.5s ease-in-out;
+
+    h3{
+        font-weight: 400;
+        font-style: italic;
+        font-size: 1.3rem;
+
+        span{
+            color: $couleur-orange;
+        }
+    }
+
+    h1{
+        font-weight: 700;
+        color: $couleur-verte;
+        margin-bottom: 30px;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+
+        &:hover{
+            color: $couleur-orange;
+        }
+    }
+
+    .ligne{
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 400;
+        padding: 7px;
+        cursor: pointer;
+        border: solid 1px rgba($couleur-orange, 0.3);
+
+        &:hover{
+            background: $couleur-orange;
+            color: white;
+            border: solid 1px $couleur-verte;
+        }
+    }
+}

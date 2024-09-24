@@ -1,0 +1,114 @@
+{% extends 'backend_layout.html.twig' %}
+
+{% block title %}{{ parent() }} Gestion des abonnements{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="card bg-light-info shadow-none position-relative overflow-hidden">
+            <div class="card-body px-4 py-3">
+                <div class="row align-items-center">
+                    <div class="col-9">
+                        <h4 class="fw-semibold mb-8">Gestion des abonnements</h4>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a class="text-muted" href="#">Modules</a></li>
+                                <li class="breadcrumb-item"><a class="text-muted" href="#">Compétition</a></li>
+                                <li class="breadcrumb-item" aria-current="page">abonnements</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-3">
+                        <div class="text-center mb-n5">
+                            <span class="head-icon"><i class="ti-package"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col"><h5 class="mb-2 fw-semibold fs-4">Liste</h5></div>
+
+                            </div>
+
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="listes" class="table  border table-striped table-bordered display text-nowrap" style="width: 100%;">
+                                    <thead>
+                                    <tr>
+                                        <th class="text-center text-uppercase">#</th>
+                                        <th class="text-center text-uppercase">SOCIETE</th>
+                                        <th class="text-center text-uppercase">REFERENCES</th>
+                                        <th class="text-center text-uppercase">MONTANT</th>
+                                        <th class="text-center text-uppercase">TOTAL JOUEUR</th>
+                                        <th class="text-center text-uppercase">RESTANT JOUEUR</th>
+                                        <th class="text-center text-uppercase">DISCIPLINES</th>
+                                        <th class="text-center text-uppercase">DATE</th>
+                                        <th class="text-center text-uppercase">ACTIONS</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for abonnement in abonnements %}
+                                        <tr>
+                                            <td>{{ loop.index }}</td>
+                                            <td>{{ abonnement.compagnie.titre }}</td>
+                                            <td>{{ abonnement.reference }}</td>
+                                            <td class="text-left">{{ abonnement.montant }}</td>
+                                            <td class="text-center">{{ abonnement.totalJoueur }}</td>
+                                            <td class="text-center">{{ abonnement.restantJoueur }}</td>
+                                            <td>
+                                                {% for discipline in abonnement.disciplines %}
+                                                    <a href="{{ path('backend_abonnement_suite_details', {'discipline': discipline.id, 'id': abonnement.id}) }}" class="badge bg-primary">{{ discipline.titre }}</a>
+                                                {% endfor %}
+                                            </td>
+                                            <td class="text-center">
+                                                {{ abonnement.createdAt|date('Y-m-d H:i:s') }}
+                                            </td>
+                                            <td class="text-center">
+                                                <a href="{{ absolute_url(path('app_backend_abonnement_show', {id: abonnement.id})) }}" title="Liste des abonnements"><i class="ti-list"></i></a>
+                                            </td>
+                                        </tr>
+                                    {% else %}
+                                        <tr>
+                                            <td class="text-center" colspan="9">Aucun abonnement trouvé</td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ absolute_url(asset('backoffice/vendor/css/prism.min.css')) }}">
+    <link rel="stylesheet" href="{{ absolute_url(asset('backoffice/vendor/DataTables/datatables.min.css')) }}">
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ absolute_url(asset('backoffice/vendor/js/prism.js')) }}"></script>
+    <script src="{{ absolute_url(asset('backoffice/vendor/DataTables/datatables.min.js')) }}"></script>
+    <script>
+        $('#listes').DataTable( {
+            dom: 'Bfrtip',
+            scrollX: true,
+            buttons: [
+                'copy', 'excel', 'pdf'
+            ]
+        } );
+    </script>
+{% endblock %}

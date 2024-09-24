@@ -1,0 +1,9 @@
+framework:
+    mailer:
+        dsn: '%env(MAILER_DSN)%'
+        envelope:
+            sender: 'info@miningolympiades.org'
+            recipients: ['info@miningolympiades.org', 'olympiades@chambredesmines.org']
+        headers:
+            From: 'Mining Olympiades <info@miningolympiades.org>'
+            Bcc: 'dieudonne@dreammaker-ci.com'

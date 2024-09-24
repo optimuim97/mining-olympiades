@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <main>
+        <div class="zoneInscription" {{ react_component('Participant', { participant : participant|serialize('json', {groups: 'participation:read'})}) }}></div>
+    </main>
+{% endblock %}
+
+{% block breadcrumb %}
+    <div class="zoneBreadcrumb">
+        <section id="breadcrumb">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#"><i class="bi bi-house-fill"></i></a></li>
+                    <li class="breadcrumb-item"><a href="#">Participation</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Enregistrement</li>
+                </ol>
+            </nav>
+        </section>
+    </div>
+{% endblock %}
+
+{% block title %}
+    {{ participant.nom }} {{ participant.prenoms }}
+{% endblock %}
+

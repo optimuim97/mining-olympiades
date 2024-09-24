@@ -1,0 +1,34 @@
+.badge {
+  background-image: url("../img/licence.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 525px;
+  height: 740px;
+  color: #000; }
+  .badge .info {
+    margin-top: 150px; }
+  .badge .licence {
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #039404; }
+  .badge .photo {
+    margin: 0 auto; }
+    .badge .photo img {
+      width: 150px;
+      max-height: 180px;
+      min-height: 180px;
+      border-radius: 10px;
+      border-top: solid 5px darkorange;
+      border-bottom: solid 5px darkorange;
+      border-left: solid 1px darkorange;
+      border-right: solid 1px darkorange; }
+  .badge .label {
+    font-size: .8rem;
+    font-weight: 700; }
+  .badge .donnees {
+    font-weight: bold;
+    color: #039404;
+    margin-top: 5px; }
+
+/*# sourceMappingURL=badge.css.map */

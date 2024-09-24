@@ -1,0 +1,113 @@
+@import url('https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://unpkg.com/aos@2.3.1/dist/aos.css');
+@import url('https://cdn.jsdelivr.net/npm/sweetalert2@11.7.31/dist/sweetalert2.min.css');
+
+
+$couleur-orange: #f39200;
+$couleur-light-purple: #F6F4FE;
+$couleur-blanche: #fff;
+$couleur-verte: #0b8e36;
+
+
+body{
+    
+    /*background-color: $couleur-light-purple;*/
+    font-family: 'Poppins', sans-serif;
+
+    // &.content{
+    //   //  background-image: url('../images/bg.png');
+    //     // background-repeat: no-repeat;
+    //     // background-size: cover;
+    //     // background-position: center center;
+    //     // object-fit: cover;
+    //     // position: relative; 
+
+    //     &::before{
+    //         content: '';
+    //         position: absolute;
+    //         width: 100%;
+    //         height: 100%;
+    //         background: rgba($color: #fff, $alpha: 0.6);
+    //         z-index: -1
+    //     }
+    // }
+}
+
+#breadcrumb{
+    margin-top: 30px;
+    a{
+        text-decoration: none;
+        color: black;
+        font-size: 0.9rem;
+    }
+}
+
+.loading-message{
+  margin: 100px auto;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 100%;
+  color: $couleur-orange;
+
+  span{
+    animation: flash 2s linear infinite;
+  }
+
+}
+
+.loading-animation {
+  position: fixed; /* Assure que l'élément est positionné de manière fixe dans la fenêtre */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7); /* Fond semi-transparent pour assombrir le contenu en dessous */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Un z-index élevé assure que l'élément apparaît au-dessus du contenu */
+}
+
+._loading_overlay_overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  zIndex: 1000;
+}
+
+._loading_overlay_content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+@keyframes flash {
+  0%{ opacity: 0;}
+  50%{ opacity: 1;}
+  100% {
+    opacity: 0;}
+}
+
+
+
+@import 'header';
+@import 'carousel';
+@import 'presentation';
+@import 'activite';
+@import 'discipline';
+@import 'contact';
+@import 'formulaire';
+@import 'page';
+@import 'webtv';
+@import 'photo';
+@import 'responsive';

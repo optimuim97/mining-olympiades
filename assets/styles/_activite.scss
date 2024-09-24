@@ -1,0 +1,65 @@
+#activite{
+    margin-bottom: 100px;
+    transition: all 0.5s ease-in-out;
+
+    .card{
+        border: none;
+        border-radius: 0;
+        font-family: 'Poppins', sans-serif;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        .card-body{
+            padding: 30px 30px;
+        }
+
+        &.vert{
+            background: $couleur-verte;
+            border: solid 1px green($color: #000000);
+            color: #fff;
+
+            a{
+                color: #fff;
+                text-decoration: none;
+                transition: 0.3s ease-in-out;
+
+                &:hover{
+                    opacity: 0.5;
+                }
+            }
+        }
+
+        &.gris{
+            background: $couleur-light-purple;
+
+            a{
+                color: $couleur-verte;
+                text-decoration: none;
+                transition: 0.3s ease-in-out;
+
+                &:hover{
+                    opacity: 0.5;
+                }
+            }
+        }
+
+        .card-title{
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        img{
+            margin-bottom: 20px;
+        }
+
+        &:hover{
+            background-color: $couleur-orange;
+
+            img{
+                transform: scale(1.2);
+            }
+        }
+    }
+
+}

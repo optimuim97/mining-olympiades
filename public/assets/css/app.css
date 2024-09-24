@@ -1,0 +1,742 @@
+@charset "UTF-8";
+/* https://htmldemo.net/korde/korde/index-boxed-layout.html#*/
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://unpkg.com/aos@2.3.1/dist/aos.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css");
+body {
+  /*background-color: $couleur-light-purple;*/
+  font-family: 'Poppins', sans-serif; }
+  body.content {
+    background-image: url("/assets/images/bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    object-fit: cover;
+    position: relative; }
+    body.content::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.6);
+      z-index: -1; }
+
+#breadcrumb {
+  margin-top: 30px; }
+  #breadcrumb a {
+    text-decoration: none;
+    color: black;
+    font-size: 0.9rem; }
+
+#topHead {
+  background-color: #b16105;
+  color: #fff;
+  z-index: 1; }
+  #topHead a {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out; }
+    #topHead a.lien {
+      margin-left: 10px;
+      margin-right: 50px; }
+      #topHead a.lien:hover {
+        color: rgba(255, 255, 255, 0.5); }
+    #topHead a.bouton {
+      background: linear-gradient(180deg, rgba(1, 75, 23, 0.6) 0%, #014b17 100%);
+      padding: 12px 50px;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      overflow: hidden; }
+      #topHead a.bouton span {
+        width: 30px;
+        height: 30px;
+        background: rgba(1, 75, 23, 0.7);
+        border-radius: 50%;
+        animation: fill 1s ease-in-out infinite alternate; }
+      #topHead a.bouton:hover {
+        background: linear-gradient(90deg, #014b17 0%, rgba(1, 75, 23, 0.6) 100%);
+        opacity: 0.8; }
+    #topHead a i {
+      margin-right: 5px;
+      font-weight: 900; }
+    #topHead a .bi-person-add {
+      animation: flash 2s ease-in-out infinite alternate;
+      font-size: 1.3rem; }
+  #topHead .topHead {
+    padding: 10px 0; }
+
+#navbar .navbar {
+  padding: 20px 0; }
+  #navbar .navbar .navbar-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around; }
+    #navbar .navbar .navbar-nav a.nav-link {
+      color: #014b17;
+      font-weight: 500;
+      font-size: 1.1rem; }
+  #navbar .navbar .liens a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.1rem;
+    font-weight: 500; }
+    #navbar .navbar .liens a i {
+      margin-right: 5px; }
+  #navbar .navbar .liens .participation {
+    background: linear-gradient(180deg, rgba(1, 75, 23, 0.6) 0%, #014b17 100%);
+    padding: 10px; }
+    #navbar .navbar .liens .participation a {
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 600; }
+
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block; }
+
+@keyframes fill {
+  100% {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; } }
+@keyframes flash {
+  0% {
+    opacity: 1;
+    transform: scale(1.2); }
+  50% {
+    opacity: 0; }
+  100% {
+    opacity: 1;
+    transform: scale(1.2); } }
+#carousel {
+  background-image: url("/assets/images/orange.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+  position: relative;
+  overflow: hidden;
+  /*border-radius: 0 0 7% 7%;*/ }
+  #carousel::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*background-color: rgba($color: $couleur-orange, $alpha: 0.5);*/
+    background-color: rgba(0, 0, 0, 0.5); }
+  #carousel .carousel-container {
+    overflow: hidden;
+    min-height: 500px;
+    position: relative;
+    width: 100%; }
+  #carousel .carousel {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    transition: opacity 1s ease-in-out;
+    padding-top: 100px;
+    margin-top: 100px; }
+    #carousel .carousel-elt {
+      flex: 1;
+      text-align: left;
+      padding: 20px;
+      color: white;
+      font-size: 24px;
+      opacity: 0;
+      width: 100%;
+      margin: 10px 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: opacity 1s ease-in-out; }
+      #carousel .carousel-elt a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: white;
+        background: linear-gradient(180deg, rgba(1, 75, 23, 0.6) 0%, #014b17 100%);
+        padding: 10px 25px;
+        border-radius: 5px;
+        font-weight: bold;
+        animation: danse 1s ease-in-out infinite alternate; }
+        #carousel .carousel-elt a:hover {
+          background: linear-gradient(45deg, rgba(177, 97, 5, 0.6) 0%, #b16105 100%);
+          opacity: 0.9; }
+
+@keyframes danse {
+  100% {
+    width: 150px;
+    border-radius: 4px; } }
+#presentation {
+  margin-top: 100px; }
+  #presentation h3 {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.3rem; }
+    #presentation h3 span {
+      color: #b16105; }
+  #presentation h1 {
+    font-weight: 700;
+    color: #014b17;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out; }
+    #presentation h1:hover {
+      color: #b16105; }
+  #presentation a {
+    text-decoration: none;
+    color: #b16105;
+    font-weight: 400;
+    font-size: 1.2rem;
+    font-style: italic; }
+    #presentation a:hover {
+      color: #014b17; }
+      #presentation a:hover::after {
+        padding-left: 30px; }
+    #presentation a::after {
+      content: '»';
+      margin-left: 5px;
+      font-size: 1.1rem; }
+  #presentation .illustration {
+    margin-top: 50px; }
+
+#activite {
+  margin-bottom: 100px;
+  transition: all 0.5s ease-in-out; }
+  #activite .card {
+    border: none;
+    border-radius: 0;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out; }
+    #activite .card .card-body {
+      padding: 30px 30px; }
+    #activite .card.vert {
+      background: #014b17;
+      border: solid 1px 0;
+      color: #fff; }
+      #activite .card.vert a {
+        color: #fff;
+        text-decoration: none;
+        transition: 0.3s ease-in-out; }
+        #activite .card.vert a:hover {
+          opacity: 0.5; }
+    #activite .card.gris {
+      background: #F6F4FE; }
+      #activite .card.gris a {
+        color: #014b17;
+        text-decoration: none;
+        transition: 0.3s ease-in-out; }
+        #activite .card.gris a:hover {
+          opacity: 0.5; }
+    #activite .card .card-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      margin-bottom: 20px; }
+    #activite .card img {
+      margin-bottom: 20px; }
+    #activite .card:hover {
+      background-color: #b16105; }
+      #activite .card:hover img {
+        transform: scale(1.2); }
+
+#discipline {
+  margin-top: 100px;
+  transition: all 0.5s ease-in-out; }
+  #discipline h3 {
+    font-weight: 400;
+    font-style: italic;
+    font-size: 1.3rem; }
+    #discipline h3 span {
+      color: #b16105; }
+  #discipline h1 {
+    font-weight: 700;
+    color: #014b17;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out; }
+    #discipline h1:hover {
+      color: #b16105; }
+  #discipline .ligne {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    padding: 7px;
+    cursor: pointer;
+    border: solid 1px rgba(177, 97, 5, 0.3); }
+    #discipline .ligne:hover {
+      background: #b16105;
+      color: white;
+      border: solid 1px #014b17; }
+
+#contact {
+  margin-top: 200px; }
+  #contact .contact {
+    background: rgba(177, 97, 5, 0.2);
+    padding: 100px 10px 50px; }
+    #contact .contact a {
+      text-decoration: none;
+      color: #014b17;
+      font-weight: 700; }
+      #contact .contact a:hover {
+        color: #b16105; }
+      #contact .contact a i {
+        font-weight: 900;
+        font-size: 1.3rem; }
+
+#copyright .copyright {
+  background: #834702;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(246, 244, 254, 0.6); }
+  #copyright .copyright a {
+    text-decoration: none;
+    color: rgba(246, 244, 254, 0.6); }
+    #copyright .copyright a:hover {
+      color: #F6F4FE; }
+
+#inscription .inscription {
+  overflow: hidden; }
+  #inscription .inscription .instruction-bloc {
+    background: url("/assets/images/vert.png") no-repeat scroll center center;
+    background-size: cover;
+    position: relative;
+    height: 100%;
+    min-height: 575px;
+    display: flex;
+    align-items: center; }
+  #inscription .inscription .instruction-contenu {
+    position: absolute !important;
+    right: -10%;
+    background: #f2f2f2;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    padding: 70px 30px;
+    width: 80%; }
+    #inscription .inscription .instruction-contenu p {
+      margin-bottom: 0; }
+  #inscription .inscription .instruction-image {
+    position: absolute;
+    right: -10%;
+    background: #fff;
+    padding: 70px 30px;
+    width: 80%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    text-align: center; }
+    #inscription .inscription .instruction-image:hover img {
+      transform: scale(1.1); }
+  #inscription .inscription .bouton i {
+    padding-right: 10px; }
+  #inscription .inscription .bouton:hover {
+    background: #b16105; }
+    #inscription .inscription .bouton:hover i {
+      color: #014b17; }
+  #inscription .inscription .btn-lien:hover {
+    background: inherit;
+    color: #014b17; }
+  #inscription .inscription .form-check a {
+    color: #b16105;
+    text-decoration: none; }
+    #inscription .inscription .form-check a:hover {
+      color: #014b17; }
+  #inscription .inscription label span {
+    color: #b16105; }
+  #inscription .inscription .licence {
+    font-weight: bold;
+    color: #b16105; }
+
+#page {
+  margin-top: 100px; }
+  #page .page {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center; }
+    #page .page .content {
+      text-align: justify; }
+    #page .page h1 {
+      font-weight: 600;
+      font-size: 1.8rem;
+      margin-bottom: 30px; }
+      #page .page h1 span {
+        color: #b16105; }
+    #page .page .illustration {
+      overflow: hidden;
+      cursor: pointer; }
+      #page .page .illustration:hover img {
+        transform: scale(1.2); }
+    #page .page .activite {
+      margin-bottom: 80px; }
+      #page .page .activite .content {
+        padding: 30px; }
+      #page .page .activite .image {
+        overflow: hidden;
+        cursor: pointer; }
+        #page .page .activite .image:hover img {
+          transform: scale(1.2); }
+        #page .page .activite .image .bg-img {
+          position: relative; }
+          #page .page .activite .image .bg-img::after {
+            content: '';
+            position: absolute;
+            right: -20px;
+            bottom: -20px;
+            height: 20%;
+            width: 20%;
+            background: #014b17; }
+          #page .page .activite .image .bg-img > * {
+            z-index: 1;
+            position: relative; }
+    #page .page .contact-info {
+      background: #014b17;
+      padding: 50px 30px;
+      color: white; }
+      #page .page .contact-info h3 {
+        font-size: 1.7rem;
+        font-weight: 700;
+        margin-bottom: 30px;
+        text-transform: uppercase; }
+      #page .page .contact-info .contenu {
+        padding: 10px 0; }
+        #page .page .contact-info .contenu h4 {
+          font-size: 1.2rem;
+          font-weight: 600; }
+        #page .page .contact-info .contenu a {
+          text-decoration: none;
+          color: white; }
+
+#headWebtv {
+  background-color: #b16105;
+  color: #fff;
+  z-index: 1; }
+  #headWebtv .headWebtv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 7px 0; }
+    #headWebtv .headWebtv h2 {
+      font-size: 1.3rem;
+      font-weight: 700; }
+    #headWebtv .headWebtv a {
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out; }
+      #headWebtv .headWebtv a.bouton {
+        background: linear-gradient(180deg, rgba(1, 75, 23, 0.6) 0%, #014b17 100%);
+        padding: 10px 50px;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        overflow: hidden; }
+        #headWebtv .headWebtv a.bouton span {
+          width: 30px;
+          height: 30px;
+          background: rgba(1, 75, 23, 0.7);
+          border-radius: 50%;
+          animation: fill 1s ease-in-out infinite alternate; }
+        #headWebtv .headWebtv a.bouton:hover {
+          background: white;
+          opacity: 0.8;
+          color: #014b17; }
+
+#webtv .webtv {
+  margin-top: 20px; }
+  #webtv .webtv .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.15);
+    border: solid 10px #fff; }
+    #webtv .webtv .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+
+#replay .replay {
+  margin-top: 100px; }
+  #replay .replay .video-picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: all 0.3s ease-in-out; }
+    #replay .replay .video-picture a {
+      position: relative; }
+      #replay .replay .video-picture a::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.3);
+        /* Couleur noire avec une opacité de 0.5 */
+        transition: opacity 0.3s ease; }
+    #replay .replay .video-picture .play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50px;
+      height: 50px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+    #replay .replay .video-picture .play-icon::before {
+      content: "\f04b";
+      /* Code Unicode pour l'icône de lecture (par exemple, une icône FontAwesome) */
+      font-family: FontAwesome;
+      /* Assurez-vous de charger la police d'icônes appropriée */
+      font-size: 24px;
+      color: #fff;
+      /* Couleur de l'icône */ }
+    #replay .replay .video-picture:hover .play-icon {
+      background: #b16105; }
+      #replay .replay .video-picture:hover .play-icon::before {
+        color: #014b17;
+        transform: scale(1.2); }
+
+#media {
+  margin-top: 150px; }
+  #media .galerie {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-content: center;
+    align-content: center;
+    align-items: center; }
+    #media .galerie .photo {
+      max-width: 100%;
+      height: auto;
+      cursor: pointer; }
+  #media .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center; }
+    #media .modal img {
+      max-width: 50%;
+      max-height: 50%; }
+    #media .modal-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center; }
+    #media .modal-nav {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 10px; }
+      #media .modal-nav button {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 2rem;
+        cursor: pointer; }
+  #media #closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer; }
+
+@media screen and (max-width: 480px) {
+  .topHead {
+    display: none; }
+
+  #inscription .inscription .instruction-bloc {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    min-height: 480px; }
+  #inscription .inscription .instruction-contenu {
+    right: auto;
+    padding: 30px;
+    width: 85%; }
+  #inscription form {
+    margin-top: 50px; }
+
+  #page .page .contact-form {
+    margin-bottom: 75px; } }
+@media (min-width: 481px) and (max-width: 768px) {
+  .topHead {
+    display: none; }
+
+  #carousel h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    text-transform: uppercase; }
+  #carousel h2 {
+    font-weight: 700;
+    font-style: italic;
+    font-size: 1.7rem; }
+    #carousel h2 span {
+      text-decoration: underline;
+      color: greenyellow; }
+  #carousel h3 {
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 50px; }
+
+  #inscription .inscription .instruction-bloc {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -moz-justify-content: center;
+    justify-content: center;
+    min-height: 480px; }
+  #inscription .inscription .instruction-contenu {
+    right: auto;
+    padding: 30px; }
+  #inscription .inscription form {
+    margin-top: 50px; }
+
+  #page .page .contact-form {
+    margin-bottom: 75px; } }
+@media (min-width: 769px) and (max-width: 991px) {
+  #topHead {
+    display: none; }
+
+  .topHead {
+    display: none; }
+
+  #carousel h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase; }
+  #carousel h2 {
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1.8rem; }
+    #carousel h2 span {
+      text-decoration: underline;
+      color: greenyellow; }
+  #carousel h3 {
+    font-weight: 500;
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 50px; }
+
+  #inscription .inscription .instruction-bloc {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -moz-justify-content: center;
+    justify-content: center; }
+  #inscription .inscription .instruction-contenu {
+    right: auto; }
+  #inscription .inscription form {
+    margin-top: 50px; }
+
+  #page .page .contact-form {
+    margin-bottom: 75px; } }
+@media screen and (min-width: 992px) and (max-width: 1280px) {
+  #carousel h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase; }
+  #carousel h2 {
+    font-weight: 700;
+    font-style: italic;
+    font-size: 2.1rem; }
+    #carousel h2 span {
+      text-decoration: underline;
+      color: greenyellow; }
+  #carousel h3 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 50px; }
+
+  #inscription .inscription .instruction-bloc {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -moz-justify-content: center;
+    justify-content: center; }
+  #inscription .inscription .instruction-contenu {
+    right: auto; }
+  #inscription .inscription form {
+    margin-top: 50px; }
+
+  #page .page .contact-form {
+    margin-bottom: 75px; } }
+@media screen and (min-width: 1281px) and (max-width: 1440px) {
+  #carousel h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase; }
+  #carousel h2 {
+    font-weight: 700;
+    font-style: italic;
+    font-size: 2.1rem; }
+    #carousel h2 span {
+      text-decoration: underline;
+      color: greenyellow; }
+  #carousel h3 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 50px; }
+
+  #inscription {
+    margin-top: 100px; }
+    #inscription .inscription .instruction-contenu {
+      width: 90%; }
+    #inscription .inscription .formulaire-bloc {
+      padding-left: 40px; } }
+@media screen and (min-width: 1441px) {
+  #carousel h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase; }
+  #carousel h2 {
+    font-weight: 700;
+    font-style: italic;
+    font-size: 2.1rem; }
+    #carousel h2 span {
+      text-decoration: underline;
+      color: greenyellow; }
+  #carousel h3 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 50px; }
+
+  #inscription {
+    margin-top: 100px; }
+    #inscription .inscription .instruction-contenu {
+      width: 90%; }
+    #inscription .inscription .formulaire-bloc {
+      padding-left: 40px; } }
+
+/*# sourceMappingURL=app.css.map */

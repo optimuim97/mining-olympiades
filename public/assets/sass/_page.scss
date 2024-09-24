@@ -1,0 +1,103 @@
+#page{
+    margin-top: 100px;
+
+    .page{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+
+        .content{
+            text-align: justify;
+        }
+
+        h1{
+            font-weight: 600;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+
+            span{
+                color: $couleur-orange;
+            }
+        }
+
+        .illustration{
+            overflow: hidden;
+            cursor: pointer;
+
+            &:hover{
+                img{
+                    transform: scale(1.2);
+                }
+            }
+        }
+
+        .activite{
+            margin-bottom: 80px;
+            
+            .content{
+                padding: 30px;
+            }
+
+            .image{
+                overflow: hidden;
+                cursor: pointer;
+
+                &:hover{
+                    img{
+                        transform: scale(1.2);
+                    }
+                }
+
+                .bg-img{
+                    position: relative;
+
+                    //&::after{
+                    //    content: '';
+                    //    position: absolute;
+                    //    right: -20px;
+                    //    bottom: -20px;
+                    //    height: 20%;
+                    //    width: 20%;
+                    //    background: $couleur-verte;
+                    //}
+                    //
+                    // > * {
+                    //    z-index: 1;
+                    //    position: relative;
+                    //  }
+
+                }
+            }
+        }
+
+        
+
+        .contact-info{
+            background: $couleur-verte;
+            padding: 50px 30px;
+            color: white;
+
+            h3{
+                font-size: 1.7rem;
+                font-weight: 700;
+                margin-bottom: 30px;
+                text-transform: uppercase;
+            }
+
+            .contenu{
+                padding: 10px 0;
+
+                h4{
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                }
+
+                a{
+                    text-decoration: none;
+                    color: white;
+                }
+            }
+        }
+    }
+}

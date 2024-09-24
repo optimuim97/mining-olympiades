@@ -1,0 +1,355 @@
+@media screen and (max-width: 480px) {
+    .topHead{
+        display: none;
+    }
+
+    #carousel{
+        h1{
+            font-size: 1.7rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        h2{
+            font-weight: 700;
+            font-style: italic;
+            font-size: 1.5rem;
+
+            span{
+                text-decoration: underline;
+                color: greenyellow;
+            }
+        }
+        h3{
+            font-weight: 600;
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 50px;
+        }
+    }
+
+    #inscription{
+        .inscription{
+            .instruction{
+                &-bloc{
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                    -moz-justify-content: center;
+                    justify-content: center;
+                    min-height: 480px;
+                }
+                &-contenu{
+                    right: auto;
+                    padding: 30px;
+                    width: 85%;
+                }
+            }
+        }
+
+        form{
+            margin-top: 50px;
+        }
+    }
+
+    #page{
+        .page{
+            .contact-form{
+                margin-bottom: 75px;
+            }
+        }
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .topHead{
+        display: none;
+    }
+
+    #carousel{
+        h1{
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        h2{
+            font-weight: 700;
+            font-style: italic;
+            font-size: 1.7rem;
+
+            span{
+                text-decoration: underline;
+                color: greenyellow;
+            }
+        }
+        h3{
+            font-weight: 600;
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 50px;
+        }
+    }
+
+    #inscription{
+        .inscription{
+            .instruction{
+                &-bloc{
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                    -moz-justify-content: center;
+                    justify-content: center;
+                    min-height: 480px;
+                }
+                &-contenu{
+                    right: auto;
+                    padding: 30px;
+                }
+            }
+
+            form{
+                margin-top: 50px;
+            }
+        }
+    }
+
+    #page{
+        .page{
+            .contact-form{
+                margin-bottom: 75px;
+            }
+        }
+    }
+}
+
+
+
+@media (min-width: 769px) and (max-width: 991px) {
+    #topHead{
+        display: none;
+    }
+    .topHead{
+        display: none;
+    } 
+
+    #carousel{
+        h1{
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        h2{
+            font-weight: 600;
+            font-style: italic;
+            font-size: 1.8rem;
+
+            span{
+                text-decoration: underline;
+                color: greenyellow;
+            }
+        }
+        h3{
+            font-weight: 500;
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 50px;
+        }
+    }
+
+    #inscription{
+        .inscription{
+            .instruction{
+                &-bloc{
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                    -moz-justify-content: center;
+                    justify-content: center;
+                }
+                &-contenu{
+                    right: auto;
+                }
+            }
+
+            form{
+                margin-top: 50px;
+            }
+        }
+    }
+
+    #page{
+        .page{
+            .contact-form{
+                margin-bottom: 75px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1280px) {
+    #carousel{
+        h1{
+            font-size: 3rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        h2{
+            font-weight: 700;
+            font-style: italic;
+            font-size: 2.1rem;
+
+            span{
+                text-decoration: underline;
+                color: greenyellow;
+            }
+        }
+        h3{
+            font-weight: 600;
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 50px;
+        }
+    }
+
+    #inscription{
+        .inscription{
+            .instruction{
+                &-bloc{
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                    -moz-justify-content: center;
+                    justify-content: center;
+                }
+                &-contenu{
+                    right: auto;
+                }
+            }
+
+            form{
+                margin-top: 50px;
+            }
+        }
+    }
+
+    #page{
+        .page{
+            .contact-form{
+                margin-bottom: 75px;
+            }
+        }
+    }
+}
+    
+@media screen and (min-width: 1281px) and (max-width: 1440px) {
+    #carousel{
+        h1{
+            font-size: 3rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        h2{
+            font-weight: 700;
+            font-style: italic;
+            font-size: 2.1rem;
+
+            span{
+                text-decoration: underline;
+                color: greenyellow;
+            }
+        }
+        h3{
+            font-weight: 600;
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 50px;
+        }
+    }
+
+    #inscription{
+        margin-top: 100px;
+
+        .inscription{
+            .instruction{
+                &-contenu{
+                    width: 90%;
+                }
+            }
+
+            .formulaire{
+                &-bloc{
+                    padding-left: 40px;
+                }
+            }
+        }
+    }
+
+    
+}
+    
+@media screen and (min-width: 1441px) {
+    #carousel{
+        h1{
+            font-size: 3rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        h2{
+            font-weight: 700;
+            font-style: italic;
+            font-size: 2.1rem;
+
+            span{
+                text-decoration: underline;
+                color: greenyellow;
+            }
+        }
+
+        h3{
+            font-weight: 600;
+            font-size: 1.5rem;
+            font-style: italic;
+            margin-bottom: 50px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    #inscription{
+        margin-top: 100px;
+        
+        .inscription{
+            .instruction{
+                &-contenu{
+                    width: 90%;
+                }
+            }
+
+            .formulaire{
+                &-bloc{
+                    padding-left: 40px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1400px){
+    #topHead{
+        a{
+            &.desktop{
+                i{
+                    &.bi-unlock{
+                        font-weight: 900;
+                        font-size: 1.2rem;
+                    }
+                }
+                span{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+    

@@ -1,0 +1,140 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+
+#headWebtv{
+    background-color: $couleur-orange;
+    color: $couleur-blanche;
+    z-index: 1;
+
+    .headWebtv{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 7px 0;
+        
+        h2{
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        a{
+            color: $couleur-blanche;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+
+            &.bouton{
+                background: linear-gradient(180deg, rgba($couleur-verte, 0.6) 0%, rgba($couleur-verte, 1) 100%);
+                padding: 10px 50px;
+                font-size: 1.2rem;
+                text-transform: uppercase;
+                font-weight: 700;
+                overflow: hidden;
+    
+                span{
+                    width: 30px;
+                    height: 30px;
+                    background: rgba($couleur-verte, 0.7);
+                    border-radius: 50%;
+                    animation: fill 1s ease-in-out infinite alternate;
+                }
+    
+                &:hover{
+                    background: white;
+                    opacity: 0.8;
+                    color: rgba($couleur-verte, 1);
+                }
+            }
+        }
+    }
+}
+
+#webtv{
+    .webtv{
+        margin-top: 20px;
+
+        .video-container{
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 5px 5px 20px rgba($color: #000000, $alpha: 0.15);
+            border: solid 10px #fff;
+
+            iframe{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+}
+
+#replay{
+    .replay{
+        margin-top: 100px;
+
+        .video-picture{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transition: all 0.3s ease-in-out;
+
+            a{
+                position: relative;
+
+                &::before{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.3); /* Couleur noire avec une opacité de 0.5 */
+                    transition: opacity 0.3s ease;
+                }
+            }
+
+            .play-icon {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 50px;
+                height: 50px;
+                background-color: rgba(0, 0, 0, 0.6);
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .play-icon::before {
+                content: "\f04b"; /* Code Unicode pour l'icône de lecture (par exemple, une icône FontAwesome) */
+                font-family: FontAwesome; /* Assurez-vous de charger la police d'icônes appropriée */
+                font-size: 24px;
+                color: #fff; /* Couleur de l'icône */
+            }
+
+            &:hover{
+                .play-icon{
+                    background: $couleur-orange;
+
+                    &::before{
+                        color: $couleur-verte;
+                        transform: scale(1.2);
+                    }
+                }
+            }
+            
+        }
+    }
+}

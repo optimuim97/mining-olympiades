@@ -1,0 +1,44 @@
+<form action="">
+    <div class="row justify-content-center align-item-center">
+        <div class="col-10 col-lg-8 col-xl-6">
+            <form action="">
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <label for="compagnie">Compagnie</label>
+                        <select name="_compagnie" id="compagnie" class="form-select select2" required>
+                            <option value="">-- Selectionnez --</option>
+                            <option value="{{ membre ? membre.id : '' }}" {{ membre ? 'selected' : '' }}>{{ membre ? membre.compagnie.titre : '' }}</option>
+                            {% for compagnie in compagnies %}
+                                <option value="{{ compagnie.id }}">{{ compagnie.titre }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="email">Email</label>
+                        <input type="email" name="_email" id="email"  class="form-control" placeholder="Email de connexion" required value="{{ membre ? membre.user.email : '' }}">
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="password">Mot de passe</label>
+                        <input type="password" name="_password" id="password" class="form-control" placeholder="Mot de passe" required>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="participation">Participation</label>
+                        <input type="text" name="_participation" id="participation" class="form-control" placeholder="Montant de la participation" required>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <div class="form-check mb-3">
+                            <input type="checkbox" id="role_user" name="_role_user" class="form-check-input" disabled checked>
+                            <label for="role_user">Utilisateur</label>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-3 text-end">
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('add-membre') }}">
+                        <a href="{{ path('app_admin_membre_index') }}" class="btn btn-outline-secondary">Annuler</a>
+                        <button type="submit" class="btn btn-primary">Enregistrer</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</form>

@@ -1,9 +1,18 @@
+# framework:
+#     mailer:
+#         dsn: '%env(MAILER_DSN)%'
+#         envelope:
+#             sender: 'info@miningolympiades.org'
+#             recipients: ['info@miningolympiades.org', 'olympiades@chambredesmines.org']
+#         headers:
+#             From: 'Mining Olympiades <info@miningolympiades.org>'
+#             Bcc: 'dieudonne@dreammaker-ci.com'
 framework:
     mailer:
-        dsn: '%env(MAILER_DSN)%'
+        dsn: "%env(MAILER_DSN)%"
         envelope:
-            sender: 'info@miningolympiades.org'
-            recipients: ['info@miningolympiades.org', 'olympiades@chambredesmines.org']
+            sender: "noreply@miningolympiades.org"
+            recipients: ["info@miningolympiades.org"]
         headers:
-            From: 'Mining Olympiades <info@miningolympiades.org>'
-            Bcc: 'dieudonne@dreammaker-ci.com'
+            From: "noreply@miningolympiades.org"
+            Bcc: "assidikouattara@gmail.com"
